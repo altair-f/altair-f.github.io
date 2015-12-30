@@ -1,0 +1,12 @@
+
+/* some shapes */
+
+/* backgrounds */
+html{background:url(pics/spring2.jpg) fixed; background-size:cover}
+.wrapper{background: linear-gradient(to left,rgba(255,255,255,0.4),rgba(255,255,255,0.9))}
+
+
+/* font & other colors */
+.wrapper{color:grey}
+a {color: #725}
+header {color: #905}

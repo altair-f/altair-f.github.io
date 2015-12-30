@@ -1,0 +1,223 @@
+*{margin:0; padding:0}
+table{margin-top:450px}
+iframe{display:none}
+
+
+
+@font-face {font-family:focus; src:url(comfortaa.woff)}
+@font-face {font-family:Billi; src:url(BillionStars_PersonalUse.woff)}
+
+html, body{height:100%}
+
+html{background:url(f1.jpg)}
+
+#wrapper {
+	position:absolute;
+	top:50%;
+	left:50%;
+	width:1000px;
+	
+	height:800px;
+	margin-top:-400px;
+	margin-left:-500px;
+
+}
+
+.venus {
+	position:absolute;
+	top:40%;
+	left:4%;
+	width:275px;
+	height:471px;
+	
+	background:rgba(0,0,0,.3);
+}
+
+.venus:before {
+	content:'Girls';
+	position:absolute;
+	top:0;
+	left:0;
+	width:275px;
+	height:371px;
+	padding-top:100px;
+	text-align:center;
+	color:white;
+	font:bold 40px Sans;
+}
+
+.venus:after {
+	content:'';
+	position:absolute;
+	top:0;
+	left:0;
+	width:275px;
+	height:471px;
+	background:url(venus.jpg) center no-repeat;
+	border:1px solid #333;
+	box-shadow: inset 0 0 20px #333, 0 0 0 3px white, 0 0 0 6px #333, 0 0 60px rgba(255,255,255,.2);
+	transition: all 1s;
+}
+
+.venus:hover:after {background-position:300px }
+
+.pidgin {
+	position:absolute;
+	top:50%;
+	left:50%;
+	width:470px;
+	height:270px;
+	border-radius:50%;
+	margin-top:-235px;
+	margin-left:-235px;
+	text-align:center;
+	padding-top:200px;
+	color:white;
+	font:bold 40px Sans;
+	
+	border:1px solid #333;
+	background:url(f1.jpg);
+	box-shadow: inset 0 0 20px #333, 0 0 0 3px white, 0 0 0 6px #333, 0 0 60px rgba(255,255,255,.2);
+	transition: all 1s;
+}
+
+.pidgin:after {
+	content:'Birds';
+	position:absolute;
+	top:0;
+	left:0;
+	width:470px;
+	height:270px;
+	padding-top:200px;
+	border-radius:50%;
+	
+	
+	background:rgba(0,50,0,.3);
+	box-shadow: inset 0 0 20px #333, 0 0 0 3px white, 0 0 0 6px #333, 0 0 60px rgba(255,255,255,.4);
+	
+}
+
+.pidgin:before {
+	content:'';
+	position:absolute;
+	top:0;
+	left:0;
+	width:470px;
+	height:470px;
+	
+	z-index:1;
+	
+	border-radius:50%;
+	background:url(pidgin.png) center no-repeat;
+	background-size:470px;
+	border:1px solid #333;
+	box-shadow: inset 0 0 20px #333, 0 0 0 3px white, 0 0 0 6px #333, 0 0 60px rgba(255,255,255,.2);
+	transition: opacity .5s, background-size 2s;
+}
+
+/*.pidgin:hover:before {background-position:-500px }*/
+.pidgin:hover:before {background-size: 0; opacity:0 }
+
+.rose {
+	position:absolute;
+	top:5%;
+	left:65%;
+	width:350px;
+	height:250px;
+	z-index:2;
+	background:url(f1.jpg);
+	
+	border:1px solid #333;
+	box-shadow: inset 0 0 20px #333, 0 0 0 3px white, 0 0 0 6px #333, 0 0 60px rgba(255,255,255,.2);
+}
+
+.rose:before {
+	content:'Flowers';
+	position:absolute;
+	top:0;
+	left:0;
+	width:350px;
+	height:150px;
+	text-align:center;
+	padding-top:100px;
+	color:white;
+	font:bold 40px Sans;
+	
+	background:rgba(100,0,0,.3);
+	
+	border:1px solid #333;
+	box-shadow: inset 0 0 20px #333, 0 0 0 3px white, 0 0 0 6px #333, 0 0 60px rgba(255,255,255,.2);
+	
+}
+
+.rose:after {
+	content:'';
+	position:absolute;
+	top:0;
+	left:0;
+	width:350px;
+	height:250px;
+	
+	
+	background:url(rose.jpg) center;
+	background-size:350px;
+	border:1px solid #333;
+	box-shadow: inset 0 0 20px #333, 0 0 0 3px white, 0 0 0 6px #333, 0 0 60px rgba(255,255,255,.2);
+	transition: all 2s ease;
+}
+
+.rose:hover:after {background-size: 700px ; opacity:0}
+
+.elegance {
+	position:absolute;
+	top:75%;
+	left:65%;
+	width:370px;
+	height:100px;
+	text-align:center;
+	
+	background:url(f2.jpg);
+	background-size:cover;
+	border-radius: 10px;
+	box-shadow: 0 0 10px #410;
+	
+	font: 60px focus;
+	line-height:80px;
+	letter-spacing:2px;
+	color:#410;
+	-webkit-transform:rotate(-35deg);
+	-moz-transform:rotate(-35deg);
+	transform:rotate(-35deg);
+
+}
+
+.elegance:after {
+	position:absolute;
+	top:5px;
+	left:5px;
+	content:'elegance';
+	display:block;
+	width:355px;
+	height:84px;
+	border:3px dashed;
+	border-radius: 5px;
+}
+
+.beauty {position:absolute;
+	top:0;
+	left:0;
+	width:450px;
+	
+	font: 100px Billi;
+	
+	color:white;
+	text-shadow: 0 0 10px #333;
+}
+
+.plus{
+	fill:#999;
+	position:absolute;
+	top:30px;
+	left:30px;
+	
+}

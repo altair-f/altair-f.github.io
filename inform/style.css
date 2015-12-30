@@ -1,0 +1,30 @@
+
+/* global layot section */
+
+html{background:grey}
+
+table{margin-top:450px}    /*  reclam hidding 30.11.2013 */
+iframe{display:none}
+
+body{
+	background:#eee;
+	margin:50px auto;
+	width:700px;
+	height:500px;
+	border:2px solid;
+	border-radius:30px;
+	font:bold 20px Sans;
+	padding:10px;
+	}
+
+a{
+	display:block;
+	margin:50px;
+	}
+
+p{
+	margin-top:200px;
+	text-align:center;
+	font:bold 60px Sans;
+	color:grey;
+	}

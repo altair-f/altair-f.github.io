@@ -1,0 +1,100 @@
+*{margin:0; padding:0}
+
+
+/* ------------- global layout ------------------ */
+
+.wrapper, footer, header, nav, .content{position:relative}
+
+.wrapper, footer{
+	max-width:800px;
+	margin-left:5%;
+	margin-right:10px;
+}
+
+iframe{display:none}
+
+/* -------------- geometry ----------------------- */
+
+header{
+	padding-top:10px;
+	margin-left:-2px;
+}
+
+svg{
+	height:31px;
+	width:31px;
+	transform:scale(0.5);
+}
+
+.plus, .bubble, .old_design_button{position:absolute}
+
+.plus{right:-8px} /* подгонка, нужна из-за уменьшения размеров свг */
+
+.bubble, .old_design_button{right:0}
+.old_design_button[ onclick=" document.getElementById('link0').href='style_dark.css';"]{display:none}
+
+header .plus, .bubble{top:0}
+
+nav .down{top:-100%}
+nav .up{top:-200%}
+nav{margin-bottom:-10px}
+
+.academic_subjects {padding-right:74px} /* ширина bubble */
+.academic_subjects a{display:inline-block; padding-right:21px}
+
+footer{margin-top:30px}
+
+
+li{margin-left:20px}
+
+h1{margin:20px 80px 10px -2px}	/* ширина олд_дизайн_буттон + еще немного */
+
+img.syll{
+	display:block;
+	margin-bottom:10px;
+	opacity:.1;
+	transition:all 1s}
+
+img.syll:hover{opacity:.8}
+
+
+
+/* -------------------- fonts ------------------------- */
+
+@font-face{font-family:headfont;src:url(PTSans.woff)}
+
+body{font:13px Sans}
+header{font:bold italic 90px headfont}
+h1{font: 18px Sans}
+.academic_subjects a{font-weight:bold}
+.plus{font-size:0}
+
+
+/*  backgrounds  */
+
+body{background:#001620}
+/*header .plus{background:#666}*/
+
+
+/*  colors  &  shadows  */
+
+body{color:#666}
+header{color:#001620; text-shadow: 0 0 5px #666, 0 0 2px #999;}
+a{color:#777}
+.academic_subjects a{color:#999; text-shadow:  0 0 0px #000}
+.academic_subjects a:hover{color:#ddd}
+
+.plus{fill:#666}
+.plus:hover{fill:#999} 
+.old_design_button, .bubble{color:#666}
+.bubble:hover{color:#999}
+.old_design_button:hover{color:#999}
+hr{display:none; opacity:.3;}
+nav{border-bottom:2px solid #666}
+
+
+/*  text-decorations  */
+
+.academic_subjects a{text-decoration:none}
+.academic_subjects a:hover{text-decoration:underline}
+

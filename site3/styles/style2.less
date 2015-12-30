@@ -1,0 +1,65 @@
+/* global layot */
+
+*{margin:0; padding:0}
+@footer-height: 50px;
+html, body{height:100%}
+.wrapper, footer{margin:0 auto; width:800px}
+.wrapper{min-height:100%; overflow:hidden}
+
+.spacer{height:@footer-height+5px}
+footer{height:@footer-height; margin-top:-@footer-height}
+
+table{margin-top:450px}
+iframe{display:none}
+
+/* menu tabs */
+@tab-height: 30px;
+nav{text-align:center; padding-top:0px; padding-bottom:1px}
+nav, nav li{height:@tab-height}
+nav li, nav li a{display:inline-block; width:150px}
+.active-tab{position:relative; height:@tab-height+1px;  z-index:1;}
+
+/* other geometrical setting section */
+header{position:relative}
+.plus{position:absolute; top:10px; right:10px}
+section{padding-left:20px}
+h1{text-align:center}
+h3{padding:30px 0 10px}
+h4{padding:5px}
+ul.twolevel{padding-left: 40px}
+section li{margin-left: 20px}
+
+
+/* decorations */
+@border-color: #9c9;
+.wrapper, footer{border-left:3px double; border-right:3px double}
+.wrapper, footer, header{box-shadow: inset 0px 0px 20px rgba(100,150,100,1)}
+nav{border-bottom:@border-color 1px solid}
+nav li{border:@border-color 1px solid; border-radius:15px 15px 0 0; box-shadow:  5px -2px 3px -1px rgba(170,200,130,1)}
+.active-tab{border-bottom:0}
+
+
+/* background */
+@wrapper-background: #efc;
+body{background:url(../pics/spring5.jpg) fixed; background-size:cover}
+.wrapper{background:@wrapper-background}
+header{background:linear-gradient(to top,#ffa, #af8)}
+.plus{fill:#784};
+.active-tab{background:linear-gradient(to top, @wrapper-background, #cf8)}
+nav li{background:linear-gradient(to top, #dfb, #ad7)}
+footer{background:lightgrey}
+
+/* fonts */
+.wrapper{font:12px Sans; line-height:20px}
+@font-face{font-family:'Xiomara'; src:url(Xiomara-Script.ttf)}
+h1{font:55px Xiomara; padding-bottom:0}
+h3{font:bold 25px Xiomara}
+
+nav li a{text-decoration:none; font: 20px Arial; line-height:@tab-height}
+
+/* text colors */
+.wrapper{color:#666}
+h1, h3, h4{text-shadow:  1px 1px 1px  #bbb}
+nav li a{color:#aaa; text-shadow:  1px 1px 1px  #bbb}
+.active-tab a{color:#888; text-shadow:  1px 1px 1px  #999}
+

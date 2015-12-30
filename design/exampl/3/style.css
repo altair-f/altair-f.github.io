@@ -1,0 +1,38 @@
+*{margin:0; padding:0}
+table{margin-left:450px; }
+iframe{display:none}
+html{background:#040404}
+@font-face{font-family:Foo; src:url(foo.ttf)}
+@font-face{font-family:CAC; src:url(cac_champagne.ttf)}
+@font-face{font-family:AG; src:url(Arthur_Gothic.ttf)}
+
+.temptation{
+	position:relative;
+	margin: 0 auto; 
+	width:1300px;
+	height:184px;
+	text-align:center;
+	padding:420px 0 0px 0;
+	overflow:hidden;
+	font: bold 170px AG;
+	background: url(12.jpg);
+	color:white;
+	letter-spacing:25px;
+	text-shadow:0 0 10px black;
+}
+
+.female{
+	margin: -40px auto; 
+	width:1300px;
+	text-align:center;
+	font: 230px CAC;
+	color:white;
+	letter-spacing:40px;
+	
+}
+
+.plus{
+	fill:white;
+	margin:30px;
+	display:inline-block;
+}

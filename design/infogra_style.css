@@ -1,0 +1,88 @@
+
+.poly_mini{
+	position:relative;
+	left:50px;
+	height:200px;
+	}
+
+
+
+.poly_mini p{
+	position:absolute;
+	top:50px;
+	display:inline-block;
+	
+	width:100px;
+	height:100px;
+	margin:0;
+	border-radius:10px;
+	opacity:0.7;
+	box-shadow:inset 0 0 20px #fff;
+	transition: all .5s;
+	cursor: pointer;
+	
+	background-size:cover;
+	background-position:center;
+	}
+
+.poly_mini p:nth-of-type(1) {left:0}
+.poly_mini p:nth-of-type(2) {left:150px}
+.poly_mini p:nth-of-type(3) {left:300px}
+.poly_mini p:nth-of-type(4) {left:450px}
+.poly_mini p:nth-of-type(5) {left:600px}
+
+.poly_mini p:hover{
+	position:relative;
+	top:0;
+	margin-left:-50px;
+	width:200px;
+	height:200px;
+	opacity:1;
+	cursor: pointer;
+	}
+
+
+.poly div {
+	display:none;
+
+	position:fixed;
+	width:100%;
+	height:100%;
+	
+	cursor: pointer;
+	z-index:5;
+	
+	background-position:center;
+	
+	background-color:rgba(0,0,0,.7); /* !!!! */
+	
+	background-repeat: no-repeat;
+	}
+
+.poly div:after {
+	content:"ЗАКРЫТЬ";
+	position:absolute;
+	bottom:0;
+	left:50%;
+	width:300px;
+	height:100px;
+	margin-left:-150px;
+	color:white;
+	font:bold 50px Sans;
+	}
+
+
+
+#p1, #d1 {background-image:url(infogr_pics/infogr1.jpg);}
+#p2, #d2 {background-image:url(infogr_pics/infogr2.jpg);}
+#p3, #d3 {background-image:url(infogr_pics/infogr3.jpg);}
+#p4, #d4 {background-image:url(infogr_pics/infogr4.jpg);}
+#p5, #d5 {background-image:url(infogr_pics/infogr5.jpg);}
+#p6, #d6 {background-image:url(infogr_pics/infogr6.jpg);}
+#p7, #d7 {background-image:url(infogr_pics/infogr7.jpg);}
+#p8, #d8 {background-image:url(infogr_pics/infogr8.jpg);}
+#p9, #d9 {background-image:url(infogr_pics/infogr9.jpg);}
+#p10, #d10 {background-image:url(infogr_pics/infog10.png);}
+#p11, #d11 {background-image:url(infogr_pics/infog11.png);}
+#p12, #d12 {background-image:url(infogr_pics/infog12.jpg);}
+

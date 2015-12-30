@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head><link rel=stylesheet href=11.css><meta charset=utf-8></head>
+<body>
+
+
+
+<article id="post-58286" class="post-58286 post type-post status-publish format-standard has-post-thumbnail hentry category-unixoid" 
+itemscope="" itemtype="http://schema.org/Article">
+            <header>
+
+
+               
+					<a href="http://xakep.ru">Журнал Хакер</a> 
+                
+             
+                <h1 itemprop="name" class="entry-title"><a itemprop="url" href="http://xakep.ru/obustraivaem-minimalistichnoe-rabochee-okruzhenie/" 
+                rel="bookmark" title="Обустраиваем минималистичное рабочее окружение">Обустраиваем минималистичное рабочее окружение</a></h1>                <div class="td-post-meta">
+                    <div class="td-clear-author"></div>
+                    <div class="entry-author-date author"><span>от <a itemprop="author" href="http://xakep.ru/author/jonsnow/">Джон Сноу</a> - 
+                    </span><time itemprop="dateCreated" class="entry-date updated" datetime="2014-09-10T21:06:01+00:00">Sep 10, 2014</time></div>
+                                   </div><br><br>
+            </header>
+            <div class="thumb-wrap"><a class="td-featured-img cboxElement" href="http://xakep.ru/wp-content/uploads/2014/09/v-konsoli-f.jpg" 
+            rel="bookmark" title="Обустраиваем минималистичное рабочее окружение">
+            <img width="700" height="352" itemprop="image" class="entry-thumb" src="http://xakep.ru/wp-content/uploads/2014/09/v-konsoli-f-700x352.jpg" 
+            alt="" title="Обустраиваем минималистичное рабочее окружение"></a></div><p><em>
+				Итак, в один прекрасный момент ты понял, что окружающий мир угнетает тебя обилием ярких красок и дружественностью предоставляемых интерфейсов. Тебе захотелось чего-то брутального, монохромного и нетривиального. Поздравляем — ты вступил на путь воена красноглазия!</em></p>
+<p>На следующее после прозрения утро ты проснулся среди разбросанного по квартире хлама и пустых бутылок из-под «Буратино». Еще не совсем разлепив веки, пошел на кухню готовить традиционную яичницу, и тут тебя атаковал голос из головы: «Откажись от иксов». «Что за?..» — хотел было ты возразить, но дверной косяк сурово прервал ваш диалог. Голос подытожил: «Только консоль, только хардкор!»</p>
+<p>Ну что ж, коли дело приняло столь серьезный оборот, ты решил действовать. Но с чего же начать? Спокойствие! Мы дадим тебе несколько советов.</p>
+<h1>Введение</h1>
+<p>Дабы сохранить на первых порах хоть какую-то связь с внешним миром, в консоли тебе понадобятся аналоги тех программ, к которым ты привык во времена своей беззаботной GUI-шной молодости.</p>
+<p>Будем отталкиваться от следующего типичного для большинства людей списка действий:</p>
+<ul>
+<li>серфинг в браузере;</li>
+<li>взаимодействие с почтой;</li>
+<li>общение по джабберу/аське;</li>
+<li>прослушивание аутентичных аудиокомпозиций с бокалом «Шато Берно» 1789 года;</li>
+<li>просмотр классики кинематографа;</li>
+<li>просмотр картинок/PDF/DJVU.</li>
+</ul>
+<p>Перед тем как перейти к описанию нужного для выполнения всех этих действий ПО, заострим свое внимание на подготовке видеоплацдарма. Другими словами, добавим в нашу систему поддержку фреймбуфера. Для осуществления задуманного нам необходимо будет установить и настроить uvesafb.</p>
+<p>Uvesafb представляет собой framebuffer-драйвер для консоли, привнесенный в ядро начиная с версии 2.6.24. От стандартного vesafb его отличает поддержка большего количества функций и более высокая карма, чем в системах на базе видеокарт NVIDIA с установленным проприетарным видеодрайвером. При этом требования к поддержке оборудования остались такими же, как и для vesafb.</p>
+<p>Особенность драйвера, о котором идет речь, в том, что для своей пристойной работы он требует демон виртуализации v86d, работающий в третьем кольце. Предназначение такого костыля — обеспечить совместимость с архитектурами, отличными от архитектуры x86. Понеслись!</p>
+<p>Устанавливаем v86d (здесь и далее я буду действовать на примере Arch Linux):</p>
+<pre><code># pacman -S v86d
+</code></pre>
+<div class="panel"><p></p>
+<h3>WARNING</h3>
+<p>В процессе тестирования на подпольных машинах у нас вылезла ошибочка при загрузке uvesafb:</p>
+<pre><code>[15.063336] uvesafb: NVIDIA Corporation, G96 Board * 07880500, Chip Rev   , OEM: NVIDIA, VBE v3.0
+[15.198285] uvesafb: VBIOS/hardware doesn't support DDC transfers
+[15.198288] uvesafb: no monitor limits have been set, default refresh rate will be used
+[15.198770] uvesafb: scrolling: redraw
+[15.198775] uvesafb: request region 0x3c0-0x3e0 failed
+[15.199764] uvesafb: probe of uvesafb.0 failed with error -5
+</code></pre>
+<p>Исправили ее путем модификации /etc/default/grub строчки</p>
+<pre><code>GRUB_CMDLINE_LINUX="video=vesa:off vga=normal"
+</code></pre>
+<p>Не забываем после этого пересобирать конфиг командой</p>
+<pre><code># grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre>
+<p></p></div>
+<p>Стремительно переходим к настройке uvesafb… Для начала удаляем любые параметры ядра, относящиеся к работе фреймбуфера:</p>
+<ul>
+<li>vga=xxx принудительно загружает старый vesafb;</li>
+<li>video=xxx не использует uvesafb, если последний скомпилирован в качестве модуля (как в стандартном ядре Arch Linux).</li>
+</ul>
+<p>Затем отключаем KMS, дабы во время загрузки не пытаться постигнуть Дао Красноглазия, которое явится в виде абсолютно черного экрана (помни: твоя психика еще не настолько окрепла, чтобы выдержать подобные испытания). Если мы счастливые обладатели видеокарточек от Intel — добавляем в конфиг GRUB’а строчки i915.modeset=0.</p>
+<p>Комментируем строку GRUB<em>GFXPAYLOAD</em>LINUX=keep в конфиге /etc/default/grub. Пересобираем grub.cfg:</p>
+<pre><code># grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre>
+<p>Добавляем v86d в секцию HOOKS конфига /etc/mkinitcpio.conf:</p>
+<pre><code>HOOKS="base udev v86d ..."
+</code></pre>
+<p>Все параметры для драйвера uvesafb задаются в его конфигурационном файле /usr/lib/modprobe.d/uvesafb.conf:</p>
+<pre><code># This file sets the parameters for uvesafb module.
+# The following format should be used:
+# options uvesafb mode_option=&lt;xres&gt;x&lt;yres&gt;[-&lt;bpp&gt;][@&lt;refresh&gt;] scroll=&lt;ywrap|ypan|redraw&gt; ...
+#
+# For more details see:
+# http://www.kernel.org/doc/Documentation/fb/uvesafb.txt
+#
+options uvesafb mode_option=1280x800-32 scroll=ywrap
+</code></pre>
+<p>Документация по установке режимов при помощи опции mode_option может быть найдена в Git-репозиториях твоего ядра по пути tree/Documentation/fb/modedb.txt. Чтобы обезопасить настройки от перезаписи в процессе обновления пакета v86d, скопируй эти самые настройки от греха подальше в /etc/modprobe.d/uvesafb.conf и затем добавь запись, указывающую на твои настройки, в секцию FILES конфига /etc/mkinitcpio.conf:</p>
+<pre><code>FILES="/etc/modprobe.d/uvesafb.conf"
+</code></pre>
+<p>Теперь нам необходимо пересобрать образ initramfs для ядра:</p>
+<pre><code># mkinitcpio -p linux
+</code></pre>
+<p>Перегружаем систему и наблюдаем за изменениями…</p>
+<p>Список возможных разрешений может быть получен командой</p>
+<pre><code>$ cat /sys/bus/platform/drivers/uvesafb/uvesafb.0/vbe_modes
+</code></pre>
+<p>Собственно, потом эти разрешения можно попробовать подставить в конфиг /etc/modprobe.d/uvesafb.conf. После того как ядрышко загрузилось, при помощи следующей команды (или использовать fbset -i) можно проверить, не обманули ли нас с разрешением:</p>
+<pre><code>$ cat /sys/class/graphics/fb0/virtual_size
+</code></pre>
+<p>Теперь можно и заняться непосредственно улучшением своих аскетичных условий существования в консоли. Начнем с выбора браузера…</p>
+<h1>Браузер</h1>
+<p>Выбор наш пал на links, да только не простой, а с поддержкой вывода через фреймбуфер. Чтобы заполучить это чудо природы, необходимо сначала скачать его с AUR-репозитория.</p>
+<pre><code># wget -c https://aur.archlinux.org/packages/li/links-g-directfb/links-g-directfb.tar.gz
+</code></pre>
+<p>Разархивируем:</p>
+<pre><code># tar xzvf links-g-directfb.tar.gz
+# cd links-g-directfb
+# makepkg
+# pacman -U links-g-directfb-2.8-1-x86_64.pkg.tar.xz
+</code></pre>
+<p>Пользуемся на здоровье:</p>
+<pre><code>$ links -g google.ru
+</code></pre>
+<div id="attachment_58290" style="width: 732px" class="wp-caption alignnone"><a href="http://xakep.ru/wp-content/uploads/2014/09/links1.png"><img class="size-full wp-image-58290" src="http://xakep.ru/wp-content/uploads/2014/09/links1.png" alt="Просматриваем сайт при помощи links" width="722" height="434"></a><p class="wp-caption-text">Просматриваем сайт при помощи links</p></div>
+<h1>Почта</h1>
+<p>В роли почтового клиента будем использовать mutt, для получения почты воспользуемся getmail, для отправки — msmtp. Начнем с получения почты. Устанавливаем getmail:</p>
+<pre><code># pacman -S getmail
+$ mkdir ~/.getmail
+$ chmod 700 ~/.getmail
+</code></pre>
+<p>Создаем файл настроек ~/.getmail/getmailrc и пихаем туда следующий текст:</p>
+<pre><code>[retriever]
+type = SimpleIMAPRetriever
+server = imap.server.ru
+port = 143
+username = user@server.ru
+password = password
+[destination]
+type = Maildir
+path = ~/.mail/
+[options]
+delete = true
+message_log = ~/.getmail/getmail-log
+</code></pre>
+<p>В зависимости от настроек сервера в качестве type для секции retriever можно использовать следующие фразы:</p>
+<ul>
+<li>SimplePOP3Retriever;</li>
+<li>BrokenUIDLPOP3Retriever;</li>
+<li>SimpleIMAPRetriever;</li>
+<li>SimplePOP3SSLRetriever;</li>
+<li>BrokenUIDLPOP3SSLRetriever;</li>
+<li>SimpleIMAPSSLRetriever;</li>
+<li>MultidropPOP3Retriever;</li>
+<li>MultidropPOP3SSLRetriever;</li>
+<li>MultidropSDPSRetriever;</li>
+<li>MultidropIMAPRetriever;</li>
+<li>MultidropIMAPSSLRetriever.</li>
+</ul>
+<p>Например, если ты задался целью настроить доступ к почте на Gmail, то секция retriever будет выглядеть примерно следующим образом:</p>
+<pre><code>[retriever]
+type = SimpleIMAPSSLRetriever
+server = imap.gmail.com
+mailboxes = ("[Gmail]/All Mail",)
+username = USER
+password = PASS
+</code></pre>
+<p>Проверить настройки можно при помощи команды getmail без указания параметров. Плавно переходим к процессу отправки почты… Устанавливаем msmtp:</p>
+<pre><code># pacman -S msmtp
+</code></pre>
+<p>Создаем конфигурационный файл ~/.msmtprc (в качестве примера идет конфиг на несколько аккаунтов) и пишем туда следующее:</p>
+<pre><code># Accounts will inherit settings from this section
+defaults
+auth             on
+tls              on
+tls_trust_file   /usr/share/ca-certificates/mozilla/Thawte_Premium_Server_CA.crt
+
+# A first gmail address
+account        gmail
+host           smtp.gmail.com
+port           587
+from           username@gmail.com
+user           username@gmail.com
+password       password
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
+
+# A second gmail address
+account    gmail2 : gmail
+from       username2@gmail.com
+user       username2@gmail.com
+password   password2
+
+# A freemail service
+account    freemail
+host       smtp.freemail.example
+from       joe_smith@freemail.example
+user       joe.smith
+password   secret
+
+# A provider’s service
+account   provider
+host      smtp.provider.example
+
+# Set a default account
+account default : gmail
+</code></pre>
+<p>Устанавливаем права на вновь созданный конфиг, в противном случае msmtp откажется работать:</p>
+<pre><code>$ chmod 600 ~/.msmtprc
+</code></pre>
+<p>Переходим к заключительной стадии настройки почты. Устанавливаем клиент mutt:</p>
+<pre><code># pacman -S mutt
+$ vim ./.muttrc
+</code></pre>
+<p>Создаем конфигурационный файл ~/.muttrc и пишем туда следующее:</p>
+<pre><code>set mbox_type=maildir
+set folder=$HOME/.mail
+set spoolfile=+/
+set header_cache=~/.hcache
+set sendmail="/usr/bin/msmtp"
+set from="user@server.ru"
+</code></pre>
+<p>В конфиге указываем, что почта будет отправляться при помощи msmtp, папкой для почты будет ~/.mail/, а адрес отправителя будет иметь вид user@server.ru. Далее нам необходимо создать несколько папок, в которых эта самая почта будет храниться:</p>
+<pre><code>$ mkdir -p ~/mail/{cur,new,tmp}
+</code></pre>
+<p>Пришло время потестить полученную систему. Качаем почту и открываем mutt:</p>
+<pre><code>$ getmail
+$ mutt
+</code></pre>
+<div id="attachment_58289" style="width: 820px" class="wp-caption alignnone"><a href="http://xakep.ru/wp-content/uploads/2014/09/mutt.png"><img class="size-full wp-image-58289" src="http://xakep.ru/wp-content/uploads/2014/09/mutt.png" alt="Получаем электрическую почту через mutt" width="810" height="532"></a><p class="wp-caption-text">Получаем электрическую почту через mutt</p></div>
+<p>Пред нашими очами предстанут все полученные письма. Для создания и отправки письма жмем m, после чего следуем инструкциям. Для автоматического получения писем добавим соответствующую запись в crontab:</p>
+<pre><code>$ crontab -e
+</code></pre>
+<p>В возникшем редакторе вставляем следующую строку:</p>
+<pre><code>*/10 * * * * /usr/bin/getmail
+</code></pre>
+<p>С этого момента getmail будет запускаться каждые десять минут, конечно же, если crond включен. Для включения crond:</p>
+<pre><code># systemctl enable cronie.service
+</code></pre>
+<h1>Джаббер</h1>
+<p>В этом вопросе нам поможет mcabber — текстовый Jabber-клиент, включающий в себя такие функции, как поддержка SSL, поддержка UTF8, история переписки (конференции), автодополнение команд и возможность создания собственных команд (триггеров). Недолго думая вбиваем в консоли:</p>
+<pre><code># pacman -S mcabber
+</code></pre>
+<p>После установки cоздаем папку ~/.mcabber и копируем в нее файл /usr/share/mcabber/example/mcabberrc:</p>
+<pre><code>$ mkdir ~/.mcabber
+$ cp /usr/share/mcabber/example/mcabberrc ~/.mcabber/mcabberrc
+</code></pre>
+<p>Устанавливаем права доступа на вновь созданную папку:</p>
+<pre><code>$ chmod 0700 ~/.mcabber
+</code></pre>
+<p>Затем переходим к редактированию конфига (он хорошо документирован, поэтому проблем в настройке возникнуть не должно). Необходимый минимум, который нужно изменить в конфигурационном файле mcabberrc:</p>
+<pre><code>set username = твой JID
+set password = твой пароль (если не указать, будет запрошен при соединении)
+set server = твой сервер
+</code></pre>
+<p>Если сервер поддерживает SSL, то мы можем воспользоваться этой прекрасной особенностью, прописав в конфиг следующие строчки:</p>
+<pre><code>set ssl = 1
+set ssl_verify = 0
+</code></pre>
+<p>При этом сертификаты с сервера будут подгружены автоматически. Вкратце опишем интерфейс. Слева — ростер (он же список контактов). Правее — окно чата. Прямо под ним — окно системных сообщений. И в самом низу — строка ввода, в которую мы будем вводить команды и сообщения. Перемещение по ростеру происходит при помощи кнопок Page up / Page down. Enter — переход в состояние чата для текущего JID или конференции. Чтобы увидеть команды, поддерживаемые mcabber’ом, вбиваем в строку ввода команду /help и медитируем…</p>
+<div id="attachment_58291" style="width: 609px" class="wp-caption alignnone"><a href="http://xakep.ru/wp-content/uploads/2014/09/mcabber.png"><img class="size-full wp-image-58291" src="http://xakep.ru/wp-content/uploads/2014/09/mcabber.png" alt="Налаживаем межличностные связи при помощи mcabber" width="599" height="316"></a><p class="wp-caption-text">Налаживаем межличностные связи при помощи mcabber</p></div>
+<h1>Аудио</h1>
+<p>В качестве аудиоплеера поставим moc — отличный вариант для тех, кто хочет наслаждаться музыкой из консоли, но при этом не желает заморачиваться с настройкой MPD.</p>
+<pre><code># pacman -S moc
+</code></pre>
+<p>Запускаем:</p>
+<pre><code>$ mocp
+</code></pre>
+<p>В левой части данного плеера располагается панель для навигации по файловой системе, в правой — плей-лист, в который можно перекидывать файлы. Основные хоткеи (описание всех хоткеев можно увидеть, нажав «?»):</p>
+<ul>
+<li>a — добавить файл в плей-лист;</li>
+<li>A — рекурсивно добавить директорию в плей-лист;</li>
+<li>enter — начать воспроизведение музыкальной композиции;</li>
+<li>s — остановить воспроизведение;</li>
+<li>n — перейти к следующей музыкальной композиции;</li>
+<li>b — перейти к предыдущей музыкальной композиции;</li>
+<li>u — передвинуть композицию в плей-листе на строчку вверх;</li>
+<li>j — передвинуть композицию в плей-листе на строчку вниз;</li>
+<li>p — пауза;</li>
+<li>&gt; — увеличить громкость воспроизведения;</li>
+<li>&lt; — уменьшить громкость воспроизведения;</li>
+<li>m — перейти в каталог музыки;</li>
+<li>g — поиск композиции в текущей папке или плей-листе;</li>
+<li>C — очистить плей-лист;</li>
+<li>V — сохранить плей-лист;</li>
+<li>q — перевести программу в фоновый режим (исполнение музыкальных композиций при этом не прекращается);</li>
+<li>Q — выйти из программы.</li>
+</ul>
+<p>Для конфигурирования плеера перекидываем дефолтный конфиг /usr/share/doc/moc/config.example в папку ~/.moc. Обзываем его просто config. Конфигурационный файл хорошо прокомментирован, поэтому при желании не составит никакого труда разобраться, что к чему. Тем не менее пройдемся по основным пунктам настроек:</p>
+<pre><code># Путь к папке, в которой хранится твоя музыкальная коллекция. Если в плеере нажать m, то попадешь именно сюда
+MusicDir        = "/path/to/your/music/dir"
+# Включение автоповтора при запуске плеера
+Repeat          = yes
+# Включение shuffle-режима
+Shuffle         = yes
+# Включение автопереключения треков
+AutoNext        = yes
+# Не показывать скрытые файлы в панели навигации по файловой системе
+ShowHiddenFiles = no 
+# Плеер запускается из твоей папки с музыкальной коллекцией
+StartInMusicDir = yes
+# Сохранение плей-листа после выхода из плеера
+SavePlaylist    = yes
+</code></pre>
+<div id="attachment_58292" style="width: 730px" class="wp-caption alignnone"><a href="http://xakep.ru/wp-content/uploads/2014/09/mocp.png"><img class="size-full wp-image-58292" src="http://xakep.ru/wp-content/uploads/2014/09/mocp.png" alt="Прослушиваем классические аудио композиции" width="720" height="432"></a><p class="wp-caption-text">Прослушиваем классические аудио композиции</p></div>
+<h1>Видео</h1>
+<p>Для просмотра произведений кинематографа мы будем использовать всем известный MPlayer. Установка не отличается оригинальностью:</p>
+<pre><code># pacman -S mplayer
+</code></pre>
+<p>MPlayer поддерживает различные модули вывода. Посмотреть их список можно при помощи следующей команды:</p>
+<pre><code># mpl -vo help
+MPlayer SVN-r36498-snapshot-4.8.2 (C) 2000-2013 MPlayer Team
+206 audio &amp; 433 video codecs
+&lt;...&gt;
+</code></pre>
+<p>Поскольку в данный момент мы находимся в голой консоли, то нас могут заинтересовать, к примеру, fbdev/fbdev2 или же aa/caca, если мы являемся настоящими ценителями прекрасного. В простейшем случае запуск будет выглядеть следующим образом:</p>
+<pre><code>$ mplayer -vo fbdev2 video.avi
+</code></pre>
+<p>Или так:</p>
+<pre><code>$ mplayer -vo caca video.avi
+</code></pre>
+<p>Теперь можно вальяжно развалиться на диване/стуле и наслаждаться кинокартиной.</p>
+<div id="attachment_58293" ><a href="http://xakep.ru/wp-content/uploads/2014/09/mplayer-ascii.png"><img class="size-full wp-image-58293" src="http://xakep.ru/wp-content/uploads/2014/09/mplayer-ascii.png" alt="Тешимся просмотром фильма в ASCII" width="900" ></a><p class="wp-caption-text">Тешимся просмотром фильма в ASCII</p></div>
+<h1>Просмотрщики</h1>
+<p>Оторвемся на минутку от выбранного на предыдущем шаге фильма и сосредоточим все свое внимание на проблеме просмотра различных форматов изображений, а также файлов формата PDF и DJVU. Для начала установим пакет fbida, который разом решит все наши проблемы с просмотром картинок и чтением DJVU-файлов:</p>
+<pre><code># pacman -S fbida
+</code></pre>
+<p>Теперь для того, чтобы почитать интересную DJVU’шку, нам надо будет привести в исполнение следующую команду:</p>
+<pre><code>$ fbdjvu file.djvu
+</code></pre>
+<p>Чтобы увидеть все изображения (к примеру, формата JPG) в текущей папке, вбиваем в консоли:</p>
+<pre><code>$ fbi *.jpg
+</code></pre>
+<p>Остались PDF’ки, но мы и их сейчас одолеем. Качаем пакет fbpdf-git из AUR, распаковываем, собираем, устанавливаем:</p>
+<pre><code># wget -c https://aur.archlinux.org/packages/fb/fbpdf-git/fbpdf-git.tar.gz
+</code></pre>
+<p>Инициируем процесс разархивирования:</p>
+<pre><code># tar xzvf fbpdf-git.tar.gz
+# cd fbpdf-git
+</code></pre>
+<p>Если у тебя нет в наличии установленного пакета openjpeg2, то быстрей исправляй это недоразумение:</p>
+<pre><code># pacman -S openjpeg2
+</code></pre>
+<p>Собираем fbpdf-git:</p>
+<pre><code># makepkg
+# pacman -U fbpdf-git-0.r75.db5da40-1-x86_64.pkg.tar.xz
+</code></pre>
+<p>Пользуемся на здоровье:</p>
+<pre><code>$ fbpdf file.pdf
+</code></pre>
+<p>Сочетания для fbpdf:</p>
+<ul>
+<li>J или &lt;^ + f&gt; — перейти на следующую страницу;</li>
+<li>K или &lt;^ + b&gt; — перейти на предыдущую страницу;</li>
+<li>h — сместиться по странице влево;</li>
+<li>l — сместиться по странице вправо;</li>
+<li>k — сместиться по странице вверх;</li>
+<li>j или пробел — сместиться по странице вниз;</li>
+<li>&lt;^ + d&gt; — прыгнуть на самый низ страницы;</li>
+<li>Backspace — прыгнуть на самый верх страницы;</li>
+<li>&lt;[0–9] + G&gt; — переход на страницу с заданным номером;</li>
+<li>&lt;[0–9] + z&gt; — зум в угадай-число раз;</li>
+<li>q — выйти из программы.</li>
+</ul>
+<div id="attachment_58287" style="width: 725px" class="wp-caption alignnone"><a href="http://xakep.ru/wp-content/uploads/2014/09/fbi.png"><img class="size-full wp-image-58287" src="http://xakep.ru/wp-content/uploads/2014/09/fbi.png" alt="Просматриваем картинки через fbi" width="715" height="542"></a><p class="wp-caption-text">Просматриваем картинки через fbi</p></div>
+<h1>Остальное</h1>
+<p>Ну и на десерт… Консольный переводчик sdcv. Для перевода программа использует словари stardict, так что они у тебя уже должны иметься. Если это не так, то надо будет их скачать и поместить в директорию со словарями. Устанавливаем:</p>
+<pre><code># pacman -S sdcv
+</code></pre>
+<p>Если ты пожелаешь сделать снимки экрана в консоли, то мы предложим тебе воспользоваться услугами fbgrab:</p>
+<pre><code># pacman -S fbgrab
+</code></pre>
+<p>И в конце концов, если тебе потребуются уместные и нужные советы, ты всегда сможешь получить их при помощи небольшого однострочника (скажем спасибо товарищу muhas), который можно оформить и в виде скрипта и запихать на него алиас в .bashrc:</p>
+<pre><code>/usr/bin/printf "$(echo -e `curl -s http://fucking-great-advice.ru/api/random | awk -F \" '{print $8}'` | sed 's/\&amp;nbsp;/ /g')"\\n 
+</code></pre>
+<h1>Заключение</h1>
+<p>Если ты все-таки немного утомился от столь ярой аскетичности и не можешь себе представить жизнь без иксов, то предлагаем обратить взор на тайловые оконные менеджеры, например на xmonad. Суть подобных программ состоит в стремлении помочь пользователю максимально эффективно управлять окнами без помощи мыши. Так что если ты мышефоб, но голая консоль тебе не пришлась по вкусу, то этот вариант, скорее всего, заставит трепетать твое сознание.</p>
+<p>Ну а тем, кого все-таки захватила консоль, хотелось бы пожелать не останавливаться на этом сложном пути истинного воена красноглазия и продолжать избавляться от излишних интерфейсов, мешающих постигнуть Дао. Следующий шаг — отказ от монитора, но это уже другая история…</p>
+        </article>

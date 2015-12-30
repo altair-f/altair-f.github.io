@@ -1,0 +1,197 @@
+/* ------global layot -----*/
+*{padding:0; margin:0}
+table{margin-top:450px}
+iframe{display:none}
+
+
+
+.header {
+	position:relative;
+	top:23px;
+	width:200px;
+	height:100px;
+	margin: 0 auto;
+	overflow:hidden;
+
+	font: bold 100px Arial;
+}
+
+.nav {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:23px;
+	background: black;
+}
+
+.nav li {
+	display:inline-block;
+	margin-left:50px;
+}
+
+.nav a{
+	color:white;
+	text-decoration: none;
+	font: bold 20px Arial;
+}
+
+.edu_material_h1 {display: none}
+
+
+
+
+.content{
+	position:relative;
+	width:900px;
+	height:500px;
+	margin: 23px auto;
+	
+	font-family:Arial;
+	color:#555;
+}
+
+.asterisk:after{
+	content:'*';
+	font: bold 16px Sans;
+	color:black}
+
+
+
+
+/* -------- button section -------------*/
+
+
+/*input{width:0;height:0}*/
+
+
+input:checked + label div.article{display: none}
+
+label{
+	position:absolute;
+	
+	width:200px;
+	height:100px;
+	
+	cursor:pointer;
+	}
+
+.pseudo_label_top {
+	
+	position:absolute;
+	width:100px;
+	height:100px;
+	border-radius:50%; 
+	border:5px solid grey;
+	transition: all 2s;
+}
+ 
+.pseudo_label_bottom {
+	
+	position:absolute;
+	
+	width:100px;
+	height:60px;
+	border-radius:50%; 
+
+	background:#ffc;
+	
+	border:5px solid grey;
+	
+	z-index:-1;
+	padding-top:40px;
+	text-align:center;
+	font-size:15px;
+	color:#555;
+
+}
+
+label:hover  div.pseudo_label_top{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100px;
+	height:100px;
+	border-radius:50%;
+	background:red;
+	-webkit-transform:rotate(-180deg);
+	-moz-transform:rotate(-180deg);
+	transform:rotate(-180deg);
+	-webkit-transform-origin: 95% 50%;
+	-moz-transform-origin: 95% 50%;
+	transform-origin: 95% 50%;
+}
+
+input{position:absolute; top:50px; left:50px; z-index:-2 }
+
+
+
+.article{
+	position:absolute;
+	top:150px;
+	left:-200px;
+	width:400px;
+	padding:0 20px 20px;
+	
+	border-radius:20px;
+	background:white;
+	box-shadow:inset 0 0 20px #555, -20px 20px 15px rgba(0, 0, 0, .5);
+	cursor:pointer;
+}
+
+.article ol{margin:0 0 0 20px;}
+.article h2{margin:20px 0;}
+
+
+#education_themes + label {left:0; top:0}
+#zachet + label			  {left:133px; top:50px}
+#presentation + label	  {left:266px; top:70px}
+#book + label			  {left:399px; top:80px}
+#comp_graphycs + label	  {left:532px; top:70px}
+#mindmapping + label	  {left:665px; top:50px}
+#sites + label			  {left:798px; top:0}
+
+#education_themes + label .pseudo_label_top	{background:url(pics/10.jpg) -20px;background-size:cover;}
+#zachet + label .pseudo_label_top			{background:url(pics/11.jpg);background-size:cover;}
+#presentation + label .pseudo_label_top		{background:url(pics/12.jpg);background-size:cover;}
+#book + label .pseudo_label_top				{background:url(pics/13.jpg) -40px ;background-size:170%;}
+#comp_graphycs + label .pseudo_label_top	{background:url(pics/14.jpg);background-size:cover;}
+#mindmapping + label .pseudo_label_top		{background:url(pics/15.jpg);background-size:cover;}
+#sites + label .pseudo_label_top			{background:url(pics/16.jpg);background-size:cover;}
+
+/* -------- old design button ---------*/
+
+.design_change_button {
+	position:absolute;
+	top:50px;
+	left: 20px;
+	
+	width:15px;
+	height:15px;
+	border-radius:50%;
+	box-shadow:  0 0 1px 1px  grey,0 0 0 3px white,  0 0 0 5px #999;
+	cursor: pointer;
+	transition: all 1s;
+
+}
+
+.design_change_button:hover {
+	background:#f04;
+	box-shadow: none;
+}
+
+.design_change_button:hover:after {
+	content:'old design';
+	display:block;
+	position:relative;
+	top:-3px;
+	left:30px;
+	width:100px;
+	
+	/*box-shadow:inset 0 0 10px grey, -10px 10px 10px #555;*/
+	font:15px Arial;
+	
+	color:#555;
+}
+
+

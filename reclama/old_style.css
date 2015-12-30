@@ -1,0 +1,23 @@
+table{margin-top:450px}
+iframe{display:none}
+
+html, body {margin:0; padding:0}
+
+html {background: #999}
+
+
+.wrapper {
+	width:750px;
+	margin: 0 auto;
+	padding:10px 30px;
+	background: white;
+	font: 10pt Arial;
+	line-height:20px;
+	}
+
+h1, h2,h3 {font-family: Serif}
+
+.nav li {
+	display: inline-block;
+	margin: 0 20px;
+	}

@@ -1,0 +1,95 @@
+<!DOCTYPE html><head><meta charset=utf-8><link href="pics/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link rel=stylesheet href='styles/reset.css'><link rel='stylesheet/less' href='styles/style2.less'>
+<script src="less.js" type="text/javascript"></script></head>
+<body>
+  <div class=wrapper>
+	<header>	  
+		<a href=../index.html class=plus><svg width=31px height=31px><path d='m 0,13 l 13,0 0,-13 5,0 0,13 13,0 0,5 -13,0 0,13 -5,0 0,-13 -13,0 z'></a>
+		<h1>Узелки на память</h1>
+		<nav>
+			<li><a href=index.html>Главная</a></li>
+			<li><a href=astron.html>Астрономия</a></li>
+			<li><a href=prikol.html>Приколы</a></li>
+			<li><a href=aateism.html>Атеизму-нет!</a></li>
+			<li class=active-tab><a href=some.html>something</a></li>
+	</nav>
+	</header>
+  
+  <section>
+<!------------------------------------------------------------------------------------------------------------>
+<h3>Задания по информатике, 72м</h3>
+<li><a href=../ods/task1.ods>task 1</a>
+<li><a href=../ods/task2.ods>task 2</a>
+<li><a href=../ods/task3.ods>task 3</a>
+<!--<li><a href=../ods/task4.ods>task 4</a>
+<li><a href=../ods/task5.ods>task 5</a>-->
+<!------------------------------------------------------------------------------------------------------------>
+<h3>06scp - last version (22.10.13)</h3>
+
+<pre>
+#	!!!---use pdf2ps only---!!!
+#	don't use pdftops
+# it works with 1.ps !!! it must be prepared before running this program
+
+
+wc -l 1.ps | sed -n 's/\([^ ]*\) .*/\1/p'  > max_string_number
+tail 1.ps  | sed -n '/%%Pages:/p' | sed -n 's/[^0-9]*\([0-9]*\).*/\1/p' > max_page_number
+
+#---------------------------------------------
+python -c '
+
+f=open("max_page_number")
+n=int(f.read().strip())		# old number of pages (number of REAL pages)
+f.close()
+
+m=4-n%4;
+if m==4:	m=0		# number of additional empty pages
+M=n+m				# new number of pages (fictive)
+
+K = M/8 
+
+if K*8!=M:	K=K+1
+L1=L2=[]
+
+for i in range(K):
+	L1=L1+[M-2*i, 1+2*i, M-2*K-2*i, 1+2*K+2*i]
+	L2=L2+[2*K-2*i, M-2*K+1+2*i, 4*K-2*i, M-4*K+1+2*i]
+
+if K*8!=M:	L1=L1[0:4*K-2]
+print "psselect -p"+str(L1)+" 1.ps|psnup -4|lp"
+
+if K*8!=M:	print "psselect -p"+str(L2[0:2])+" 1.ps|psnup -4|lp; psselect -p"+str(L2[4:4*K])+" 1.ps|psnup -4|lp"
+else:	print "psselect -p"+str(L2)+" 1.ps|psnup -4|lp"
+
+
+f=open("max_string_number")
+N=int(f.read().strip())
+f.close()
+N=N-10
+
+print str(N)+",$s/%%Pages: .*/%%Pages: "+str(M)+"/"
+for i in range(m):	print str(N)+",$s/%%Trailer/%%Page: "+str(n+i+1)+" "+str(n+i+1)+"\\n%%Trailer/" ' > script  
+
+#--------------------------------------------
+sed -n '1s/\[//;1s/, /,/g;1s/\]//p' script > 1script_for_print
+sed -n '2s/\[//g;2s/, /,/g;2s/\]//gp' script > 2script_for_print
+sed -i "1,2d"  script
+
+sed -i -f script 1.ps 
+
+rm   script   max_page_number   max_string_number
+
+
+
+</pre>
+<!------------------------------------------------------------------------------------------------------------>
+<h3>Students</h3>
+<pre>192.168.1.250:/Students /mnt/Students nfs noatime 1 0</pre>
+
+<!------------------------------------------------------------------------------------------------------------>
+  </section>
+  <div class=spacer></div>
+  </div> <!-- END OF WRAPPER -->
+  <footer>	  This is the Footer!  </footer>
+</body>
+</html>

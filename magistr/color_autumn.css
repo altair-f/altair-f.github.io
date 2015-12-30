@@ -1,0 +1,37 @@
+
+/* some shapes */
+footer{text-align:right; padding-right:40px;}
+
+.winter_button{display:inline-block; width:70px; height:70px; position:relative}
+
+/* borders & other decorations */
+.winter_button{border:1px solid; border-radius:50%;  box-shadow: inset 0px 0px 35px #fff/*rgba(250,250,250,1)*/}
+
+/* backgrounds */
+html{background:url(pics/mist1.jpg) fixed; background-size:cover}
+.wrapper{background: linear-gradient(to left,rgba(255,255,255,0.6),#ddd)}
+.winter_button{background:url(pics/Galantus.jpg); background-size:cover}
+
+/* font & other colors */
+.wrapper{color:grey}
+header{color:#650/*#559*//*tomato*/}
+
+
+
+.winter_button:hover::after {content:'Надоела осень? Включи весну!';
+
+	position:absolute;
+	top:0px;
+	left:-230px;
+	display:block;
+	width:170px;
+	padding:15px;
+	box-shadow:-10px 10px 15px #777, inset 0 0 17px #bba;
+	text-align:left;
+	
+	
+	border-radius:12px;
+	color:#555;
+	background:#fff;
+	font: 17px Sans;
+}

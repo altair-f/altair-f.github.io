@@ -1,0 +1,100 @@
+*{margin:0; padding:0}
+
+@font-face{font-family:my_font;src:url(oBdcd9Oi.ttf)}
+@font-face{font-family:my1_font;src:url(oPOIuAtF.otf)}
+
+html{background:#b82}
+html, body{height:100%}
+.wrapper{min-height:100%; color:#aaa; background:#000 url(pics/stigmaty1.jpg) no-repeat}
+
+.wrapper:before, .wrapper:after{
+	position:absolute;
+	width:500px;
+	font:80px my_font;
+	color:white;
+	text-shadow:1px -1px 5px yellow, 2px -3px 6px gold, 3px -5px 7px red;
+	}
+	
+.wrapper:before{
+	top:450px;
+	left:100px;
+	content:"Народ Мой, что сделал Я тебе? Ответь Мне!";
+	}
+
+.wrapper:after{
+	top:100px;
+	left:650px;
+	content:"Я вознёс тебя силою великою, а ты пригвоздил Меня к древу крестному.";
+	}
+
+a{color:#777; text-decoration:none;}
+
+.content{position:absolute; top:100%; width:60%; margin-left:10%; color:black }
+.content a{color:black; text-decoration:underline}
+h1{margin: 20px 0}
+.syll{display:block}
+
+a:hover{color:#ddd; text-decoration:underline}
+
+svg{
+	width:31px;
+	height:31px;
+	transform:scale(.5);
+	fill:#777;
+}
+
+svg:hover{fill:#bbb}
+
+ footer, hr, iframe, table{display:none}
+
+
+/* ------------ geometry ------------------*/
+
+header, nav, .academic_subjects a, .plus, .bubble{
+	position:absolute;
+}
+
+header{
+	bottom:45px;
+	right:100px;
+	color:transparent;
+	width:320px;
+	height:240px;
+	margin-left:-180px;
+	margin-top:-110px;
+	background:url(pics/logo1.png) no-repeat;
+	background-size:contain;
+	z-index:1;
+}
+
+nav{
+	bottom: 5px;
+	right:10px;
+	width:500px;
+	height:320px;
+	
+	
+	border:0px solid;
+	
+}
+
+.academic_subjects a{
+	width:130px;
+	font:15px Arial;
+	letter-spacing:1px;
+	
+}
+
+.academic_subjects a:nth-of-type(4){top:0;		left:0;		width:150px;}
+.academic_subjects a:nth-of-type(6){bottom:0;	left:0px;	width:150px;}
+.academic_subjects a:nth-of-type(3){top:0;		left:330px}
+.academic_subjects a:nth-of-type(1){bottom:0;	left:350px}
+.academic_subjects a:nth-of-type(5){bottom:0;	left:180px}
+.academic_subjects a:nth-of-type(2){top:0;		left:180px;	width:70px;}
+
+
+
+nav .up  {top:-4px; right:-10px; height:31px;}
+nav .down{bottom:-6px; left:-60px; transform:rotate(90deg); width:31px; height:31px;}
+header .up{top:-57px; left:-140px; height: 31px; line-height:31px;}
+.bubble{bottom:0px; right:-0px; font:12px Arial; text-decoration:none;}

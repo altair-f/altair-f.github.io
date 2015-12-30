@@ -1,0 +1,42 @@
+.winter_button {
+	left:0;
+	background:lightblue;
+}
+.spring_button {
+	left:20px;
+	background: #fad;
+}
+
+.summer_button {
+	left:40px;
+	background: #9e9;
+}
+
+.autumn_button {
+	left:60px;
+	background: #ff0;
+}
+
+/* backgrounds */
+html {background: url(pics/fn2.jpg) fixed; }
+.wrapper {background: #eef}
+.wrapper {background: linear-gradient(to right,rgba(255,255,255,0.6),#ddd)}
+footer {background: #ccc}
+
+
+
+/* colors */
+
+header {color: #905}
+.bubble, .bubble_anketa {color: #c05;}
+a {color: #725}
+.content h1 {color: #b87}
+
+
+.wrapper, footer {
+	box-shadow: inset 0px 0px 20px rgba(150,100,100,1);}
+
+.academic_subjects a, .bubble, .bubble_anketa {
+	box-shadow: inset 0px 0px 20px rgba(150,100,100,0.4)}
+
+.plus {fill: #b98}

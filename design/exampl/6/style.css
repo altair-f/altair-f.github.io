@@ -1,0 +1,148 @@
+*{margin:0; padding:0}
+table{margin-left:450px; }
+iframe{display:none}
+
+body{
+	position:relative;
+	margin:0 auto;
+	width:1000px;
+
+}
+
+@font-face{font-family:VS; src:url(Supremus.woff)}
+@font-face{font-family:AA; src:url(Pharmadin-CondensedLight.woff)}
+
+
+
+header{
+	position:absolute;
+
+	font:bold 250px AA;
+	margin-top:-50px;
+	-webkit-transform:rotate(-30deg);
+	-moz-transform:rotate(-30deg);
+	transform:rotate(-30deg);
+	color:tomato;
+}
+
+.somebox{
+	height:60px;
+	text-align:right;
+	font:50px AA;
+	color:grey;
+}
+
+/* ----------- plitka -----------*/
+
+.href1, .href2, .href3, .href4, .href5{
+	position:absolute;
+	text-align:center;
+	color:white; 
+	text-decoration:none;
+	font:bold 50px VS;
+	text-shadow:0 0 20px #000;
+}
+
+.href1{
+	line-height:500px;
+	right:0;
+	top:60px;
+	width:709px;
+	height:473px;
+	background:url(1_1.jpg);
+	background-size:cover;
+	
+	transition: background 5s ease;
+}
+
+/*href1:hover{opacity:0}*/
+
+/*.nizz{
+	position:absolute;z-index:-2;
+	right:0;
+	top:60px;
+	width:709px;
+	height:473px;
+	background:url(1.jpg);
+	background-size:cover;
+	
+	transition: background 5s ease;
+}*/
+
+
+.href1:hover{background:url(1.jpg)}
+
+.href2{
+	right:709px;
+	top:220px;
+	width:300px;
+	height:300px;
+	background:url(2.jpg);
+	background-size:300px;
+	background-position:center;
+
+	transition: background 5s ease;
+}
+
+.href2:hover{background-size:700px}
+
+.href3{
+	padding-top:0px;
+	line-height:450px;
+	right:709px;
+	top:520px;
+	width:323px;
+	height:300px;
+	background:url(3.jpg);
+	background-size:cover;
+
+	transition: background 6s ease-out;
+}
+
+.href3:hover{background-position:bottom}
+
+
+.href4{
+	line-height:550px;
+	padding-top:20px;
+	right:486px;
+	top:532px;
+	width:223px;
+	height:330px;
+	background:url(4.jpg);
+	background-size:300px;
+
+	font-size:40px;
+
+	transition: background 2s ease;
+}
+
+.href4:hover{background-position:top right}
+
+
+.href5{
+	line-height:250px;
+	right:25px;
+	top:532px;
+	width:463px;
+	height:330px;
+	background:url(5.jpg);
+	background-size:550px;
+	background-position:bottom;
+
+	transition: background 2s ease;
+}
+
+.href5:hover{background-position:bottom right}
+
+
+.plus{
+	position: fixed;
+	left:0;
+	bottom:20px;
+	z-index:1;
+	fill:grey;
+	margin:30px;
+	display:inline-block;
+}
+

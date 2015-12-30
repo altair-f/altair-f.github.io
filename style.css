@@ -1,0 +1,152 @@
+/* reset section */
+*{margin:0; padding:0; }
+
+/* global layot section */
+html, body {height:100%}
+
+.wrapper, footer, .syll {margin:0 auto; width:800px;}
+.wrapper {min-height:100%; overflow:hidden; padding:0 20px}
+
+footer {height:50px; margin-top:-50px}
+.spacer {height: 60px;}
+
+svg {width:30px; height:30px}
+
+table{margin-left:450px}    /*  reclam hidding 30.11.2013 */
+iframe{display:none}
+
+header{
+
+	margin-top:20px;
+	}
+
+/* other geometrical setting section */
+
+.syll {padding-bottom:20px}
+ul {padding-left:40px}
+footer {text-align:center; padding:0 20px}
+h1 {padding:50px 0 20px}
+
+
+nav, header{position:relative}
+.plus {position:absolute;right:0;}
+.down {bottom:0}
+.up {top:0}
+
+
+/* -------- nav & bubble -------- */
+
+nav {
+	text-align:center; 
+}
+
+.academic_subjects{
+	float:left;
+	display:inline; 
+	width:365px;
+	height:512px;	/* bad magic number! */
+	}
+.academic_subjects a{
+	display:block;
+	
+	text-align:left;
+	border-radius:20px;
+	margin-bottom: 8px;
+	padding-left:20px;
+	padding-top:8px;
+	
+	}
+
+nav a, .bubble_anketa{text-decoration:none;}
+
+.bubble{
+	position:absolute;
+	top:50%;
+	
+	margin-top:-150px;
+	margin-left:-145px;
+	
+	width:300px;
+	display:inline-block;
+	height:100px;
+	border-radius:200px;
+	text-align:center;
+	padding:100px 0;
+	
+}
+
+.bubble_anketa{
+	
+	float:left;
+	display:block;
+	margin:10px;
+	margin-right:50px;
+	width:300px;
+	border-radius:50%;
+	text-align:center;
+	font: 50px Sans2;
+	line-height:300px;
+	
+}
+
+.bubble_great {
+	box-shadow: inset 0px 0px 20px rgba(150,100,100,0.4);
+	padding:20px;
+	padding-right:100px;
+	margin:40px 0;
+	height:320px;
+	border-radius:400px
+}
+
+.autumn_button, .summer_button, .spring_button, .winter_button {
+	position: absolute;
+	top:0;
+	display:inline-block;
+	width:10px;
+	height:10px;
+	border-radius:50%;
+	z-index:50 !important;
+}
+
+
+
+
+/* fonts */
+small{font: 13px Arial}
+
+@font-face{font-family:'Sans1'; src:url(GardensC.woff)}
+@font-face{font-family:'Sans2'; src:url(Intro.woff)}
+@font-face {font-family: 'CAC'; src:  url('CACChampagne.woff');}
+header {font: 130px CAC}
+.wrapper {font: 20px Arial}
+.academic_subjects a {font: bold 30px/70px  Sans1}
+.plus {font: 5px Sans}
+h1 {font: 40px  Sans2}
+.bubble {font: 50px Sans2;}
+
+
+/* backgrounds */
+
+.wrapper {background: #eef}
+.wrapper {background: linear-gradient(to right,rgba(255,255,255,0.6),#ddd)}
+footer {background: #ccc}
+
+
+
+/* colors */
+.wrapper {color: grey}
+.academic_subjects a:hover, .bubble:hover, .bubble_anketa:hover {
+	box-shadow: inset 0px 0px 20px rgba(100,100,100,0.8)}
+
+h1, h2, h3, header, nav a, .bubble_anketa {text-shadow:  3px 2px 3px  #bbb}
+
+
+
+.wrapper {border-left: 3px double; border-right: 3px double;}
+
+.syll {opacity:0.7}
+
+/*----------------------------*/
+.old_design_button{display:none}
+
+

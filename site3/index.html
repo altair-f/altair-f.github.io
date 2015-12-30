@@ -1,0 +1,233 @@
+<!DOCTYPE html><head><meta charset=utf-8><link href="pics/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link rel='stylesheet/less' href='styles/style2.less'><script src="less.js" type="text/javascript"></script></head>
+<body>
+  <div class=wrapper>
+  <header>	  
+  
+	<a href=../index.html class=plus><svg width=31px height=31px><path d='m 0,13 l 13,0 0,-13 5,0 0,13 13,0 0,5 -13,0 0,13 -5,0 0,-13 -13,0 z'></a>
+	<h1>Узелки на память</h1>
+	<nav><ul>
+		<li class=active-tab><a href=index.html>Главная</a></li>
+		<li><a href=astron.html>Астрономия</a></li>
+		<li><a href=prikol.html>Приколы</a></li>
+		<li><a href=aateism.html>Атеизму-нет!</a></li>
+		<li><a href=some.html>something</a></li></ul>
+	</nav>
+  </header>
+  
+  <section>
+<!------------------------------------------------------------------------------------------------------------>
+
+<h3>07.11.15 (красный день календаря)</h3>
+<li>Определить, как флешку видит ядро:</li>
+<pre># dmesg</pre>
+Эта команда покажет объем загрузочной флешки, в числе прочего. Файловики его не видят.
+
+<h3>16.04.15</h3>
+<li>обратные кавычки и исполнение команд</li>
+<pre>
+surg@surg:~$ a='pwd'
+surg@surg:~$ echo $a
+pwd
+surg@surg:~$ a=`pwd`
+surg@surg:~$ echo $a
+/home/surg
+</pre>
+<li>видео -> аудио с помощью ffmpeg, командная строка linux</li>
+<pre>ffmpeg -i filename.mp4 filename.mp3</pre>
+(настройки по умолчанию)
+
+
+
+
+
+<h3>29.09.14</h3>
+<li><a href=somepages/290914/11.html>Обустраиваем минималистичное рабочее окружение</a> - статья из журнала <a href=http://xakep.ru>Хакер</a></li>
+
+
+<h3>07.03.14</h3>
+<li><a href=http://ohaskell.ru/>ohaskell.ru</a> - книга о Haskell на русском и по-человечески</li>
+<li><a href=pdf/ohaskell.pdf>ohaskell.pdf</a> - она же на нашем сайте</li>
+
+<h3>17.02.14</h3>
+<b>Geany</b> умеет выделять вертикальные блоки!
+<li>Выделяем то, что нужно, в первой строке блока</li>
+<li>Alt + Shift + Down</li>
+
+
+<h3>31.01.14</h3>
+побеждена "дурацкая распорка"<br><br>
+<b>HTML:</b><br>
+<xmp>   <a href=https://github.com/ class=plitka>GitHub<img src=pics/github.png></a></xmp>
+<b>CSS:</b>
+<xmp>   .plitka{display:block}
+   .plitka img{float:left}
+   a.plitka:after{content:"";clear:both; display:block}
+</xmp>
+<br>
+Псевдоэлемент :after можно вешать только на контейнеры, на картинку и другие уединенные тэги - не получится.
+
+
+<h3>20.01.14</h3>
+Happy New Year!!! 
+<li>crontab -e:  26 20 20 1 * export DISPLAY=:0.0 && gedit ~/00recent</li>
+- we won the cron
+
+<h3>14.12.13</h3>
+Новые хостинги:
+<li><a href=http://www.hostinger.ru/>http://www.hostinger.ru</a> - пакуем сайт в зип и загружаем!</li>
+<li><a href=http://free.beget.ru/>http://free.beget.ru</a> - рекомендовано, не пробовал</li>
+<li><a href=http://free.timeweb.ru/>http://free.timeweb.ru</a> - рекомендовано, не пробовал</li>
+Реально бесплатные и хорошие шрифты (не кириллца):
+<li><a href=http://www.dafont.com/>http://www.dafont.com</a> - рекомендовано, не пробовал</li>
+
+<h3>30.11.13</h3>
+<li><a href=http://forum.ubuntu.ru/?topic=74165.0>http://forum.ubuntu.ru</a> - наиболее полная статья по Grub</li>
+<li>Сегодня поставил gparted на centos - все, понеслась...</li>
+<li>У меня работает LVM  и есть /dev/mapper... Как быть? Плакать?</li>
+
+
+<h3>27.11.13</h3>
+О команде dd:
+<li><a href=http://rus-linux.net/lib.php?name=MyLDP/consol/dd/dd-1.html>http://rus-linux.net/lib.php?name=MyLDP/consol/dd/dd-1.html</a></li>
+<li><a href=http://habrahabr.ru/post/117050/>http://habrahabr.ru/post/117050/</a></li>
+
+<h3>25.11.13</h3>
+<h3>Печать... Предпечать, постпечать... Печаль.</h3>
+<li><a href=http://habrahabr.ru/post/197036/>http://habrahabr.ru/post/197036/</a> - отсюда все началось</li>
+
+
+
+<h4>Список ссылок из этой статьи:</h4>
+<ul class='twolevel'>
+<li><a href="http://www.gimp.org">Gimp</a> — редактор растровой графики</li>
+<li><a href="http://scribus.net">Scribus</a> — система для верстки и подготовки оригинал-макетов к печати</li>
+<li><a href="http://inkscape.org">Inkscape</a> — редактор векторной графика</li>
+<li><a href="http://www.linuxjournal.com/content/printing-scribus">Printing in Scribus</a> (by Bruce Byfield)</li>
+<li><a href="http://www.newspaperclub.com/how-it-works/scribus-export-guide">Scribus PDF Export Guide</a></li>
+<li><a href="http://dispcalgui.hoech.net/">dispcalGUI Open Source Display Calibration</a> — GUI для Argyll (система калибровки монитора). Не упомянута в статье, советую обратить внимание</li>
+<li><a href="http://gimp-print.sourceforge.net/">Gutenprint</a> — набор драйверов и утилит для цветной печати. Поддержка более чем 1300 типов принтеров</li>
+<li><a href="http://www.imagemagick.org">Image Magick</a> — набор консольных утилит (и библиотек) для работы с растровой графикой</li>
+<li><a href="http://fukuchi.org/works/qrencode/manual/index.html">qrencode</a> — консольная утилита (+ библиотека для разработчиков) для генерации QR кодов</li>
+<li><a href="https://en.wikipedia.org/wiki/UFRaw">UFRaw</a> — утилита и Gimp плагин для работы со снимками в некомпрессированом формате</li>
+<li><a href="https://pypi.python.org/pypi/fontypython/0.4.3">Fonty Python</a> — управление шрифтами в Gnu/Linux</li>
+<li><a href="http://libregraphicsworld.org/blog/entry/getting-cmyk-colors-from-inkscape-to-scribus">Getting CMYK colors from Inkscape to Scribus for printing</a> — не пригодившаяся, но полезная ссылка. </li>
+</ul>
+<h4>О скрибусе - толково:</h4>
+<li><a href=http://wiki.scribus.net/>http://wiki.scribus.net</a> - скрибус-вики. Слева есть выбор языка</li>
+
+
+
+
+<h3>16.11.13</h3>
+<li>Сверстайте 
+вот <a href=http://www.securityscripts.ru/blogs/%D0%92%D0%B8%D1%80%D1%83%D1%81%D1%8B/how-made-android-malware.html>такой</a> 
+дизайн:)</li>
+<li>Секреты написания <a href=http://study-music.ru/hits/index.html>хитов</a> :)</li>
+<li>Два хостинга от surg:</li>
+<ul class='twolevel'>
+<li><a href=https://developers.google.com/appengine/docs/whatisgoogleappengine>google app engine</a></li>
+<li><a href=https://www.heroku.com/>https://www.heroku.com/</a></li>
+</ul>
+
+<h3>08.11.13</h3>
+formatting of flash drive in FAT32
+<li>~ df -Th - выяснить, как называется девайс (например, оказалось, что это sdc1)</li>
+<li>~ umount /dev/sdc1</li>
+<li># mkfs.vfat -I -n 'Newname' /dev/sdc1 - если не дать имени, то комп сам даст КОШМАРНОЕ имя</li>
+источник: <a href=http://www.ithowto.ru/168-formatirovanie-fleshki.html>http://www.ithowto.ru/168-formatirovanie-fleshki.html</a> 
+
+<h3>28.10.13</h3>
+recursive updative copying path1/dir on path2/dir (dirname is th same):<br>
+cp -Rup path1/dir path2
+
+<h3>24.10.13</h3>
+работа с буфером обмена в BASH: Ctrl+U, Ctrl+Y<br>
+еще кое-что полезное:
+<li><a href=http://habrahabr.ru/post/198482/>http://habrahabr.ru/post/198482</a></li>
+
+<h3>22.10.13</h3>
+"wma самый поганый кодек по звуку, это общеизвестно. насчет его популярности, они сильно преувеличили) особенно учитывая что >70% плееров в мире это ipod, который wma не играет, а из оставшихся думаю приличная доля-тоже. если в него кто-то и кодирует, то по ошибке"
+<li><a href=http://softwaremaniacs.org/blog/2007/05/08/workarounds/>http://softwaremaniacs.org...</a></li>
+интересный ресурс об ИКТ в edu
+<li><a href=http://edu-lider.ru/category/uroki-kompyuternoj-gramotnosti/texnologii-web2-0-v-uchebnom-processe/>http://edu-lider.ru/...</a></li>
+
+
+<h3>25.06.13</h3>
+о тестах - вполне разумно и содержательно
+<li><a href=http://testobr.narod.ru/>http://testobr.narod.ru/</a></li>
+
+<h3>25.05.13</h3>
+конструкторы от Ю.П.
+<li><a href=http://umi.ru/>http://umi.ru/</a></li>
+<li><a href=http://ru.wix.com/>http://ru.wix.com/</a></li>
+
+<h3>25.04.13</h3>
+$ find / аргументы 2> /dev/null
+
+<h3>16.04.13</h3>
+Статья про box-shadow  и text-shadow, причем внутренние
+<li><a href=http://habrahabr.ru/post/154211/>http://habrahabr.ru/post/154211/</a></li>
+
+<h3>02.04.13</h3>
+Две ссылки от Surg:
+<li><a href=http://jsbin.com/oboyuy/2/edit>http://jsbin.com/oboyuy/2/edit</a></li>
+<li><a href=http://jsbin.com/welcome/1/edit>http://jsbin.com/welcome/1/edit</a></li>
+	
+<h3>01.04.13</h3>
+С первым апреля! less линкуется так:
+<a href=http://lesscss.ru/>http://lesscss.ru/</a> - идем и читаем. Но работает на локалке только в FF. Для хрома надо подшаманить:
+запускать его из консоли 
+	<br>
+google-chrome --disable-web-security --allow-file-access-from-files
+<br>
+
+- ругнется на отмену безопасности, зато лесс заработает.
+
+<h3>16.03.13</h3>	
+<li><a href=http://help.ubuntu.ru/>http://help.ubuntu.ru/</a> - русская документация Ubuntu</li>
+
+<h3>15.03.13</h3>	
+<li>Побежден подвал!</li>
+<li>yum update firefox  - так обновлять Firefox под центосом</li>
+
+<h3>9.03.13</h3>
+<li><a href=http://wiki.russianfedora.ru/index.php/%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0_%D1%81_Yum>Работа с Yum</a></li>
+
+<h3>5.03.13</h3>
+<li>Linux  лучше не обновлять, а переустанавливать</li>
+<li>атрибут lang=ru - желательный, но не обязательный</li>
+
+<h3>4.03.13</h3>
+<li>HTML5 приучает нас к порядку: 'px' надо указывать явно, иначе не сработает</li>
+<li>HTML5 освобождает нас от неинформативной ерунды: &lt;meta charset=utf8&gt; -  даже в IE!</li>
+
+<h3>1.03.13</h3>
+<li>Pidgin history location: ~/.purple/logs, но это html-s..(( токо седом долбать... пока не найдешь конвертер.</li>
+<li>pstops '1:0@0.97(15mm,-7mm)' 12.ps|lp - команда для печати на старом мфу в 303</li>
+<li><a href=http://www.shsd.ru/>http://www.shsd.ru/</a> - институт Юрия Мороза</li>
+
+<h3>28.02.13</h3>
+<li>Не сумел настроить вафлю дома (( зато чуть-чуть узнал, что такое DHCP. Но только приблизительно</li>
+<li><a href=http://http://design-for-business.ru/analytics/articles/id/504>design-for-business.ru/analytics/articles/id/504</a> - 
+	довольно крутая статья о модульных сетках</li>
+
+<h3>25.02.13</h3>
+<li>Узнал новое слово Cairo  - векторная графика по типу PDF для десктопа, основа графики GNOME (точнее, GTK+)</li>
+<li>Также узнал, что GTK - это GIMP ToolKit</li>
+<li><a href=somepages/gnv2.html>определить версию GNOME</a></li>
+<li>Ctrl+Z - приостановить процесс в bash</li>
+<li>"data:text/html, &lt;html contenteditable &gt;" - вводим в адресной строке, и наш "зверь" превращается в блокнот, даже с картинками!</li>
+<li><a href=http://www.sublimetext.com/>http://www.sublimetext.com</a> - перспективный редактор</li>
+<li><a href=http://lingualeo.ru/>http://lingualeo.ru</a>  - в копилку английского</li>
+<li><a href=http://temnyjles.narod.ru/Map.htm>http://temnyjles.narod.ru/Map.htm</a> - Юрий Насимович</li>
+
+<!------------------------------------------------------------------------------------------------------------>
+  </section>
+  <div class=spacer></div>
+  </div> <!-- END OF WRAPPER -->
+  <footer>
+	  This is the Footer!
+  </footer>
+</body>
+</html>

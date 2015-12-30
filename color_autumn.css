@@ -1,0 +1,43 @@
+.winter_button {
+	left:0;
+	background:lightblue;
+}
+.spring_button {
+	left:20px;
+	background: #fad;
+}
+
+.summer_button {
+	left:40px;
+	background: #9e9;
+}
+
+.autumn_button {
+	left:60px;
+	background: #ff0;
+	
+}
+
+/* backgrounds */
+html {background: linear-gradient(to right, transparent, rgba(255,255,255,0.5), rgba(255,255,255,0.5), transparent),url(pics/f_autumn.jpg) fixed; }
+.wrapper {background: #eef}
+.wrapper {background: linear-gradient(to right,rgba(255,255,255,0.4),#ddd)}
+footer {background: #ccc}
+
+
+
+/* colors */
+
+header {color: #731}
+.bubble, .bubble_anketa {color: #b50;}
+a {color: #940}
+.content h1 {color: #b87}
+
+
+.wrapper, footer {
+	box-shadow: inset 0px 0px 20px rgba(200,120,100,1);}
+
+.academic_subjects a, .bubble, .bubble_anketa {
+	box-shadow: inset 0px 0px 20px rgba(170,120,50,0.4)}
+
+.plus {fill: #a73}

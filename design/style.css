@@ -1,0 +1,114 @@
+@font-face{font-family:'Bikham'; src:url(Bikham3.woff)}
+/*@font-face{font-family:'CAC'; src:url(../CACChampagne.woff)}*/
+
+/* ------global layot -----*/
+*{padding:0; margin:0}
+table{margin-top:450px}
+iframe{display:none}
+
+html, body {height:100%}
+.wrapper{min-height:100%;padding-left:100px}
+
+header {
+	padding-top:50px;
+	font: 140px/180px Bikham;
+}
+
+header a {
+	text-shadow:  -5px 5px 8px  #999;
+	text-decoration:none;
+}
+
+.spacer {height:60px}
+
+footer {
+	height:50px;
+	margin-top:-50px;
+	text-align:center;
+}
+
+
+/* ---- бублики ----*/
+
+.content {
+	max-width:80%}
+
+.content a {
+	position:relative;
+	display:inline-block;
+	height:200px;
+	width:200px;
+	border-radius:50%;
+
+	margin:50px 100px 50px 0;
+
+	text-decoration:none;
+	box-shadow:inset 7px -7px 40px #68a, -10px 10px 25px #999;
+	font:  12px Sans;
+	transition: all 0.5s;
+}
+
+.content a i {
+	position:relative;
+	left:35px;
+	top:25px;
+	display:block;
+	height:100px;
+	width:100px;
+	font:80px Bikham;
+	text-shadow:  -5px 5px 8px  #999;
+}
+
+.content a p {
+	position:absolute;
+	top:50%;
+	left:50%;
+	-webkit-transform-origin: 0 0;
+	-moz-transform-origin: 0 0;
+	transform-origin: 0 0;
+	padding-top:66px;
+}
+
+.content a p:nth-of-type(1) {-webkit-transform: rotate(78deg);-moz-transform: rotate(78deg);transform: rotate(78deg);}
+.content a p:nth-of-type(2) {-webkit-transform: rotate(66deg);-moz-transform: rotate(66deg);transform: rotate(66deg);}
+.content a p:nth-of-type(3) {-webkit-transform: rotate(54deg);-moz-transform: rotate(54deg);transform: rotate(54deg);}
+.content a p:nth-of-type(4) {-webkit-transform: rotate(42deg);-moz-transform: rotate(42deg);transform: rotate(42deg);}
+.content a p:nth-of-type(5) {-webkit-transform: rotate(30deg);-moz-transform: rotate(30deg);transform: rotate(30deg);}
+.content a p:nth-of-type(6) {-webkit-transform: rotate(18deg);-moz-transform: rotate(18deg);transform: rotate(18deg);}
+.content a p:nth-of-type(7) {-webkit-transform:  rotate(6deg);-moz-transform:  rotate(6deg);transform:  rotate(6deg);}
+
+.content a p:nth-of-type(8) {-webkit-transform: rotate(-6deg);-moz-transform: rotate(-6deg);transform: rotate(-6deg);}
+.content a p:nth-of-type(9) {-webkit-transform:rotate(-18deg);-moz-transform:rotate(-18deg);transform:rotate(-18deg);}
+.content a p:nth-of-type(10){-webkit-transform:rotate(-31deg);-moz-transform:rotate(-31deg);transform:rotate(-31deg);}
+.content a p:nth-of-type(11){-webkit-transform:rotate(-42deg);-moz-transform:rotate(-42deg);transform:rotate(-42deg);}
+.content a p:nth-of-type(12){-webkit-transform:rotate(-54deg);-moz-transform:rotate(-54deg);transform:rotate(-54deg);}
+.content a p:nth-of-type(13){-webkit-transform:rotate(-67deg);-moz-transform:rotate(-67deg);transform:rotate(-67deg);}
+.content a p:nth-of-type(14){-webkit-transform:rotate(-78deg);-moz-transform:rotate(-78deg);transform:rotate(-78deg);}
+
+.content a:hover {
+	color:#025;
+	box-shadow:inset 0 0 30px #025, -10px 10px 25px #999;
+}
+
+
+nav a {padding-right:20px;}
+nav a:hover {color:#025;}
+
+
+
+/* colors */
+.wrapper {box-shadow: inset  0 -5px 50px #555;}
+
+html {
+	background:	url(straus4.png) 103% bottom no-repeat fixed, linear-gradient(to right,#eec,white,#eec);
+	background-size:contain;
+}
+
+
+a {color:#07b}
+footer, footer a {
+	color:#999;
+}
+
+
+

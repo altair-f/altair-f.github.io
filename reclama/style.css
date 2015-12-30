@@ -1,0 +1,137 @@
+/* ------global layot -----*/
+* {padding: 0; margin: 0}
+table {margin-top: 450px}
+iframe{display:none}
+
+html, body {height: 100%}
+
+body {text-align: center; overflow: hidden}
+
+header{
+	width:950px;
+	margin:20px auto 100px auto ;
+	height:150px;			/* завязано на размеры шрифтов и паддинги! */
+}
+
+
+/* ----- central block ---------*/
+
+.content{
+	position:relative;
+	display:inline-block;
+	width:80%;
+	height:40%;		/* завязано на высоту овала */
+	min-width:994px;	/* подгоночный параметр! 3 овала+6 бордеров+ 4px про запас */
+	max-width:2000px;
+}
+
+.oval1, 
+.oval2, 
+.oval3 {
+	position:absolute;
+	display:inline-block;
+	width:300px;
+	height:200px;
+	
+	border-radius:60px;
+	text-align:center;
+
+	text-decoration:none;
+	font:bold 35px Sans;
+	line-height:80px;
+	text-shadow: 0px 0px 15px #333;
+	color: white;
+	box-shadow: inset 0px 0px 15px #333, -7px 7px 7px #998;
+	transition: all 1s ;
+	}
+	
+.oval1 {
+	left:0;
+	top:0;
+	background: url(pics/007.jpg) no-repeat;
+}
+
+.oval2 {
+	left:50%;
+	top:50%;
+	margin-left:-150px;	/* половина ширины овала + 1 бордер*/
+	margin-top:-100px;	/* половина высоты овала + 1 бордер*/
+	background: url(pics/005.jpg) no-repeat;
+	
+}
+
+.oval3 {
+	right:0;
+	bottom:0;
+	background: url(pics/001.jpg) no-repeat;
+}
+
+.oval1:hover,
+.oval3:hover,
+.oval2:hover {
+	
+	text-shadow: none;
+	color: transparent;
+}
+
+.oval1:hover {background-color:#feb; background-position: 310px 0;}
+.oval2:hover {background-color:#edf; background-position: -310px -210px;}
+.oval3:hover {background-color:#ffb; background-position: 0 210px;}
+
+
+.oval1:hover:after,
+.oval3:hover:after,
+.oval2:hover:after {
+	position:absolute;
+	top: 0;
+	display: block;
+	width:300px;	
+	height:120px;
+	padding-top:80px;
+	font:bold 15px Sans;
+	color: #777;
+}
+
+.oval1:hover:after{content: "что будем изучать, и в каких количествах";}
+.oval2:hover:after{content: "статьи на сайте и ссылки на внешние источники";}
+.oval3:hover:after{content: "нас, вообще-то, ждет сначала зачет, а потом и экзамен, что там будет?";}
+
+/* ---- fonts, decor. colors ----- */
+
+
+@font-face{font-family:'Zero'; src:url(zero1.otf)}
+
+html{
+	background:	linear-gradient(to right,#ddb,#ffd,#ddb);
+	box-shadow: inset  0 -10px 20px #555;
+}
+
+header{
+	background:linear-gradient(to bottom,yellow,lightgray);
+	box-shadow: inset 0px 3px 10px #555;
+	text-align:center;
+	border-radius:20px;
+}
+
+header h1, header h1 a{
+	height:40px;		/* завязано на шрифт 36px!  */
+	padding:50px 0 20px;
+	color:white;
+	text-shadow: 0 0 1px #eee,
+			/*0 0 4px  #fff,*/
+			0 -2px 4px  #ff3,
+			2px -4px 6px  #fd3,
+			-2px -6px 11px  #f80,
+			2px -8px 18px  #f20,
+			0 2px 3px grey;
+	font: bold 36px Zero;
+	text-decoration:none;
+}
+header a{
+	padding:0 30px;
+	font:  20px Sans;
+	color: #777;
+	}
+
+
+

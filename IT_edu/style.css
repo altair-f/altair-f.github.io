@@ -1,0 +1,54 @@
+/* reset section */
+html, body, div, ul{margin:0; padding:0}
+
+/* global layot section */
+html, body{height:100%}
+.wrapper, footer{margin:0 auto; width:800px}
+.wrapper{min-height:100%; overflow:hidden}
+/*.wrapper{padding-top:40px}	 reclam hidding 31.08.2013 */
+footer{height:50px; margin-top:-50px}
+.spacer{height:60px;}
+.content{padding:20px}
+
+table{margin-top:450px}    /*  reclam hidding 30.11.2013 */
+iframe{display:none}
+
+/* other geometrical setting section */
+.plus{float:right}
+ul{padding-left:20px}
+footer{text-align:center}
+.dvoika {float:right; width:302px; height:364px}
+.syll{text-align:center; padding:20px; margin-left:-40px}
+
+/*.left{float:left}*/
+
+/* borders & other decorations */
+.wrapper{border-left: 3px double; border-right: 3px double; }
+.wrapper, footer{box-shadow: inset 0px 0px 20px rgba(100,100,100,1)}
+.dvoika {border-radius:20px; overflow:hidden; box-shadow: inset 0px 0px 15px rgba(250,250,250,1)}
+
+/* fonts */
+small{font:13px Arial}
+@font-face{font-family:'CAC'; src:url(../CACChampagne.woff)}
+header{font:100px CAC}
+.wrapper{font:20px Arial}
+
+/* backgrounds */
+html{background:url(pics/winter3.jpg) fixed; /*background-size:cover*/}
+.wrapper{background: #eef}
+.wrapper{background: linear-gradient(to left,rgba(255,255,255,0.6),#ddd)}
+footer{background:#ccc}
+.dvoika{background:url(pics/dvoika-b.jpg)}
+
+
+/* font & other colors */
+.wrapper{color:grey}
+header{color:#559/*tomato*/}
+h1, h2, h3, header{text-shadow:  3px 2px 3px  #bbb}
+a{color:#07b}
+.plus{fill:grey}
+
+
+
+
+

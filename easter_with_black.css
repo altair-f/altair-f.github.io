@@ -1,0 +1,186 @@
+*{margin:0; padding:0}
+
+@font-face{font-family:my_font;src:url(oBdcd9Oi.ttf)}
+@font-face{font-family:my1_font;src:url(oPOIuAtF.otf)}
+
+html{background:#b82}
+html, body, .wrapper{height:100%}
+.wrapper {min-width:600px}
+
+
+.bubble:before,
+.bubble:after,
+header,
+nav,
+.plus,
+.content {
+	position:absolute
+}
+
+
+.bubble:before,
+.bubble:after,
+header,
+.academic_subjects a,
+.bubble {
+	display:inline-block
+}
+
+header,
+nav,
+.bubble {
+	width:100%
+}
+
+
+
+.bubble:before,
+.bubble:after {
+	top:100%;
+	font:100px my_font;
+	color:white;
+	text-shadow:1px -1px 5px yellow, 2px -3px 6px gold, 3px -5px 7px red;
+}
+
+.wrapper {
+	position:relative;
+	background: #69f url(pics/rio.jpg) no-repeat center ;
+	background-size: contain;
+}
+
+.bubble:before {
+	content:"Христос";	
+	left:10%;
+}
+
+.bubble:after {
+	content:"воскрес!";
+	right: 10%;
+}
+
+/* ------------ geometry ------------------*/
+
+header {
+	color:transparent;
+	top:0;
+	right:0;
+}
+
+nav {
+	top:5px;
+	text-align: center;
+}
+
+
+.academic_subjects a{
+	margin: 5px 0;
+	width:200px;
+	font: bold 15px Arial;
+	letter-spacing:1px;
+}
+
+
+
+.plus {
+	bottom:0;
+	height:22px;
+}
+
+nav .up  {margin-left: 80px}
+nav .down {margin-left:-100px}
+header .up {z-index:1}
+
+.bubble {
+	margin-bottom:0px;
+	font:12px Arial;
+	text-decoration:none;
+}
+
+svg{
+	width:31px;
+	height:31px;
+	transform:scale(.5);
+	fill:#fff;
+}
+
+svg:hover{fill:#bbb}
+
+a{color:#fff; text-decoration:none;}
+a:hover{color:#ddf; text-decoration:underline}
+
+
+
+.content {top:100%; width:60%; margin-left:10%; color:black }
+.content a{color:black; text-decoration:underline}
+
+h1{margin: 20px 0}
+.syll{display:block}
+
+
+footer, hr, iframe, table{display:none}
+
+
+
+
+/* -------- button section -------------*/
+
+
+/*input{width:0;height:0}*/
+.group101co{position:absolute;
+top:200px;left:100px}
+
+input:checked + label div.article{display: none}
+
+label{
+	position:absolute;
+	
+	width:200px;
+	height:100px;
+	
+	cursor:pointer;
+	}
+
+
+ 
+.pseudo_label_bottom {
+	
+	position:absolute;
+	
+	width:100px;
+	height:65px;
+	border-radius:50%; 
+
+	background:#ffc;
+	
+	border:5px solid grey;
+	
+	
+	padding-top:35px;
+	text-align:center;
+	font-size:25px;
+	color:#55f;
+
+}
+
+
+
+input{position:absolute; top:50px; left:50px; z-index:-2 }
+
+
+
+.article{
+	position:absolute;
+	top:150px;
+	left:-20px;
+	width:400px;
+	padding:0 20px 20px;
+	
+	border-radius:20px;
+	background:white;
+	box-shadow:inset 0 0 20px #555, -20px 20px 15px rgba(0, 0, 0, .5);
+	cursor:pointer;
+}
+
+.article ol{margin:0 0 0 20px;}
+.article h2{margin:20px 0;}
+

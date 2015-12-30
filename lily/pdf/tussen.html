@@ -1,0 +1,50 @@
+<style>table{margin-top:450px}</style>
+<xmp>
+\version "2.18.0"
+\paper{
+	top-margin=25
+	line-width = 18\cm
+}
+
+\layout{
+	indent = 0\cm  
+	ragged-right = ##f
+	\context{\Score \remove "Bar_number_engraver"}
+	%\context {\Staff\override NoteHead.font-size = #-2}  
+}
+
+\header{
+	title=\markup{\sans \medium "ПРОГУЛКА В ЛЕСУ"}
+	composer=\markup{\center-column{\sans\medium "П. де СЕННЕВИЛЬ" "О. ТУССЕН"}}
+}
+
+%---------------------------------------------------------------1
+ 
+\relative c'\new PianoStaff <<
+
+			\set PianoStaff.connectArpeggios = ##t	
+			\override PianoStaff.Arpeggio.stencil = #ly:arpeggio::brew-chord-bracket
+ 
+ \new Staff="up" {\time 3/4\key d\minor\tempo \markup {\override #'(font-name . "Arial bold")  {  Tempo di valse  }}
+ 	r4^\markup{\halign #1.5 \raise #2 {\override #'(box-padding . 0.8)\box A}}
+		<a d f>2^> | r4<a cis e>2^> | \hideNotes g\arpeggio s4 |s2 s4 \unHideNotes \bar "||" 
+		a'4^\markup{\halign #0.3 \raise #2.5 {\override #'(box-padding . 0.8)\box B}}\mf (d,8 f a f)	\break
+	bes4.( a8[ g f] | e4. c8 a' g | a4. g8 f e | d4 bes8 d a' f | g4. f8 e d)|						\break
+	cis8(a b c d e| f e f g a4)\bar "||" a'( d,8 f a f|bes4. a8 g f | e4. c8 a' g)|
+	a4.(g8 f e|d4 bes8 d a' f|g4. f8 e d|cis a b cis d e|f e f g a4)\bar "||"
+	d4_\mp (a d|bes2 g4) | c4.(d8 c g | a2.) | ees4 (f g) |}
+
+ \new Staff="down"{\key d\minor\clef F
+	<d,,, d'>4^> r4 r | <a a'>4^> r4 r |<<{a'4(\arpeggio bes8[ a] 
+		\override Stem.direction=#UP e' bes'|a[ e] bes'[ a]\change Staff=up \showStaffSwitch e'8[ bes'] )
+		\change Staff=down }\\{a,,,2.~| a}>>  \bar "||" d4( a' f')								\break
+	g,4(d' bes') | c,,(g' c) | f,(c' a') | bes,,(f' d') | g,(d' bes')|						\break
+	a,4(c a')| d,(a'2) \bar "||" d,4(a' f')| g,(d' bes') | c,,(g' e')|
+	f,(c' a') | bes,,(f' d') | g,,(d' bes') | a,(e' a) | d,(a' d) \clef G\bar "||"
+	f8(d' a d f, d')|\override Stem.direction=#UP g,( d' bes d g, d')|e,(c' g c e, c')|f,(c' a c f, c')|ees,(bes' g bes ees, bes')|
+}>>
+</xmp>
+
+
+
+

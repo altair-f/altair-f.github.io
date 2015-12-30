@@ -1,0 +1,76 @@
+/**/
+a.old_style_button{display:inline-block; width:10px; height:10px; border-radius:50%}
+
+/* reset section */
+*{margin:0; padding:0}
+
+/* global layot section */
+html, body{height:100%}
+.wrapper, footer{margin:0 auto; width:800px}
+.wrapper{min-height:100%; overflow:hidden}
+/*.wrapper{padding-top:40px}	 reclam hidding 31.08.2013 */
+footer{height:50px; margin-top:-50px}
+.spacer{height:60px;}
+.content{padding:30px}
+/*header{height:150px}*/
+
+table{margin-top:450px}    /*  reclam hidding 30.11.2013 */
+iframe{display:none}
+
+/* other geometrical setting section */
+.plus{float:right}
+ul{padding-left:20px}
+header, footer{text-align:center}
+
+
+
+
+
+/* borders & other decorations */
+.wrapper{border-left: 3px double; border-right: 3px double; }
+.wrapper, footer{box-shadow: inset 0px 0px 20px rgba(100,100,100,1)}
+.plitka{
+	display:block;
+	padding:30px;
+	margin:30px 0;
+	border-radius:40px;
+	text-decoration:none;
+	box-shadow: inset 0px 0px 20px rgba(100,100,100,0.7)}
+
+.plitka h2 {padding-bottom:20px}
+.plitka img{float:left; max-width:260px;}
+.plitka p, .plitka h2{margin-left:290px;}
+
+a.plitka:after{content:"";clear:both; display:block}
+
+.plitka:hover{box-shadow: inset 0px 0px 20px #444}
+
+/* fonts */
+@font-face{font-family:'CAC'; src:url(../CACChampagne.woff)}
+header{font:100px CAC}
+.wrapper{font:15px Arial; letter-spacing:1px}
+.plitka h2 {letter-spacing:-6px; font:60px Sans;}
+
+
+
+/* backgrounds */
+html{background:url(pics/f5a.jpg) fixed; /*background-size:cover*/}
+.wrapper{background: #cfa}
+.plitka{background:#efe}
+footer{background:#ccc}
+.old_style_button{background:#f77}
+
+
+/* font & other colors */
+.wrapper{color:grey}
+header{color:#444}
+h1, h2, h3, header{text-shadow:  3px 2px 3px  #bbb}
+.plitka h2, a{color:#070}
+.plitka {color:grey}
+.plitka:hover{color:#333}
+.plus{fill:grey}
+
+
+
+
+

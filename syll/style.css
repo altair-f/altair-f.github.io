@@ -1,0 +1,101 @@
+/* reset section */
+*{margin:0; padding:0; }
+
+/* global layot section */
+html, body{height:100%}
+.wrapper, footer, .syll{margin:0 auto; width:800px;}
+.wrapper{min-height:100%; overflow:hidden; padding:20px}
+footer{height:50px; margin-top:-50px}
+.spacer{height:60px;}
+
+svg{ width:30px ;height:30px}
+
+table{margin-top:450px}    /*  reclam hidding 30.11.2013 */
+iframe{display:none}
+
+/* other geometrical setting section */
+
+ul{padding-left:40px}
+footer{text-align:center; padding:0 20px}
+h1{padding:20px}
+
+
+menu, header{position:relative}
+.plus{position:absolute;right:0;}
+.down{bottom:0}
+.up{top:0}
+
+
+/* borders & other decorations */
+.wrapper{border-left: 3px double; border-right: 3px double; }
+.wrapper, footer{
+	box-shadow: inset 0px 0px 20px rgba(100,100,100,1); 
+	}
+menu{text-align:center; margin-bottom:20px}
+menu ul{
+	float:left; 
+	padding-left:0}
+menu li{
+	list-style:none;
+	width:330px;
+	text-align:left;
+	border-radius:20px;
+	margin:0 0 8px 0;
+	padding:25px 20px 16px 20px;
+	}
+
+menu a{text-decoration:none;}
+
+.bubble{
+	position:absolute;
+	top:50%;
+	margin-top:-150px;
+	margin-left:-145px;
+	
+	width:300px;
+	display:inline-block;
+	height:100px;
+	border-radius:200px;
+	text-align:center;
+	padding:100px 0;
+	color:#bbf;
+}
+
+menu li, .bubble{
+	box-shadow: inset 0px 0px 20px rgba(100,100,100,0.4)}
+
+menu li:hover, .bubble:hover{
+	box-shadow: inset 0px 0px 20px rgba(100,100,100,0.8)}
+
+
+/* fonts */
+small{font:13px Arial}
+@font-face{font-family:'CAC'; src:url(cac_champagne.ttf)}
+@font-face{font-family:'Sans1'; src:url(GardensC.otf)}
+@font-face{font-family:'Sans2'; src:url(Intro.otf)}
+header{font:130px CAC}
+.wrapper{font:20px Arial}
+menu a{font:bold 40px  Sans1; letter-spacing:-0.5px}
+.plus{font:5px Sans}
+h1{font: 40px  Sans2}
+.bubble{font:50px Sans2;}
+
+/* backgrounds */
+html{background:url(pics/winter3.jpg) fixed;}
+.wrapper{background: #eef}
+.wrapper{background: linear-gradient(to right,rgba(255,255,255,0.6),#ddd)}
+footer{background:#ccc}
+
+
+
+/* colors */
+.wrapper{color:grey}
+header{color:#559/*tomato*/}
+h1, h2, h3, header, menu a{text-shadow:  3px 2px 3px  #bbb}
+a{color:#07b}
+.plus{fill:grey}
+.syll{opacity:0.7}
+
+
+
+

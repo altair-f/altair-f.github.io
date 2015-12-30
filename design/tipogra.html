@@ -1,0 +1,134 @@
+<!DOCTYPE html><html><head><title>Student</title><meta charset=utf8><link rel=stylesheet href=structure_style.css></head>
+<body>
+
+<div class=wrapper>
+
+<header>
+		<a href=index.html class=design_page>Design</a>
+		
+		<a href=verstka.html class=bubble>В<sub>c</sub></a>
+		<a href=tipogra.html class=bubble>Т<sub>г</sub></a>
+		<a href=infogra.html class=bubble>И<sub>г</sub></a>
+		<a href=compgra.html class=bubble>П<sub>г</sub></a>
+		<a href=coloris.html class=bubble>Ц<sub>в</sub></a>
+		<a href=inspire.html class=bubble>В<sub>д</sub></a>
+		<a href=secrets.html class=bubble>П<sub>в</sub></a>
+		<a href=history.html class=bubble>И<sub>д</sub></a>
+		
+		<h1>Типографика</h1>
+
+	<nav>
+		<a href=../index.html>Главная</a>
+		<a href=../KPT/1.html>КПТ</a>
+		<a href=../reclama/index.html>Реклама</a>
+		<a href=../reclama/material.html>Реклама: Материалы</a>
+		<a href=../reclama/structure.html>Реклама: Структура</a>
+	</nav>
+</header>
+
+<!------------------------------------------------------------------>
+
+<div class=content>
+
+<!------- 1 --------->
+<h2>Книги (прямые сслыки!)</h2>
+<ul>
+	<li><a href=pdf/Robin_Wilams_Kniga_po_verstke.pdf>Робин Вильямс. Книга по верстке</a></li>
+</ul>
+
+<!------- 2 --------->
+<h2>О шрифтах - вообще</h2>
+<ul>
+	<li>Элементы шрифта (источник:
+		<a href=http://a.zeos.in/shpargalki/font.png>a.zeos.in/shpargalki/font.png</a> )<br>
+		<a href=pics/font.gif target=_blank><img src=pics/font_mini.gif></a>
+	</li>
+	<li>Лигатуры (источник:
+		<a href=http://practicaltypography.com/ligatures.html>practicaltypography.com/ligatures</a> )<br>
+		<a href=pics/lig.gif target=_blank><img src=pics/lig_mini.gif></a>		
+	</li>
+	<li>О кириллических шрифтах, классно! - Александра Королькова:
+		<ol>
+			<li><a href=http://leksandra.livejournal.com/105740.html>Нет предела совершенству</a>
+			<li><a href=http://paratype.livejournal.com/46150.html>Относительно лёгкий способ определить качество кириллицы в шрифте</a>
+		</ol>
+	</li>
+</ul>
+
+<!------- 3 --------->
+<h2>О компьютерных шрифтах</h2>
+<ul>
+	<li>Форматы шрифтовых файлов:
+		<ol>
+			<li><b>TTF</b> - True Type Format - просто вообще один из самых распространенных, понимается всеми браузерами, кроме IE.</li>
+			<li><b>OTF</b> - Open Type Format - тоже один из самых распространенных, более современный, 
+				призванный исправить некоторые ограничения TTF, понимается всеми браузерами, кроме, конечно, IE.</li>
+			<li><b>WOFF</b> - Web Open Font Format - единственный формат, понимаемый всеми и даже IE... но только не ниже 9-й версии! 
+				Ниже 9-й - другой формат. Кроме того, он вдвое компактнее, чем TTF. Вот им и будем верстать.</li>
+			<li><b>SVG</b> - Scalable Vector Graphics - за ним будущее. А еще есть: afm, bin, cff, dfont, pfa, pfb, pfm, ps, pt3, suit, t42, tfm, ttc, ...
+				</li>
+		</ol>
+	</li>
+	<li>Как поместить на сайте надпись, сделанную шрифтом, например, <b>PT Sans</b>?
+		<ol>
+			<li>Помещаем в папку, скажем, <b>my_fonts</b>, файл шрифта <b>ptsans.woff</b></li>
+			<li>Оформляем в HTML саму надпись, пусть это будет некоторый заголовок:<br>
+				<b>&lt;h1 class='beautiful__letters'> Мой Красивый Заголовок &lt;h1></b>
+			</li>
+			<li>Прописываем в CSS наш шрифт и стиль надписи:<br>
+				<b>@font-face {font-family: 'niceFont'; src:  url('my_fonts/ptsans.woff');}<br>
+					h1.beautiful__letters{font-family: 'niceFont'}</b>
+			</li>
+		</ol>
+	</li>
+	<li>Что делать, если нет файла формата WOFF, а есть, скажем, TTF (а именно так чаще всего и будет)?
+		<ol>
+			<li>Можно забыть про пользователей IE, тогда - делаем все то же самое с тем файлом, который у нас есть</li>
+			<li>Переделать файл TTF в файл WOFF, например, вот здесь: <a href=http://onlinefontconverter.com/>onlinefontconverter.com</a></li>
+		</ol>
+	</li>
+</ul>
+
+
+
+<!------- 4 --------->
+<h2>Где найти нужный шрифт?</h2>
+<ul>
+	<li><a href=http://webfont.ru/category/#all>webfont.ru</a></li>
+	<li><a href=http://www.type-finder.com/>www.type-finder.com</a></li>
+	<li><a href=http://www.whatfontis.com/>www.whatfontis.com</a> - сервис определения шрифта по его изображению.</li>
+	<li><a href=http://www.myfonts.com/WhatTheFont/>www.myfonts.com/WhatTheFont</a> - то же самое.</li>
+</ul>
+
+
+
+<!------- 5 --------->
+<h2>Создать свой шрифт?! (сначала подумайте хорошенько!)</h2>
+<ul>
+	<li><a href=http://fontforge.org/>fontforge.org</a> - программа, бесплатная, открытая, для всех платформ.</li>
+	<li><a href=http://glyphrstudio.com/>glyphrstudio.com</a> - бесплатный сервис, только английский язык.</li>
+	<li><a href=https://code.google.com/p/svg-edit/>svg-edit</a> - бесплатный сервис для рисования SVG, в том числе и шрифтов.</li>
+	
+</ul>
+
+
+<!------- 6 --------->
+<h2>Иконки (есть бесплатные)</h2>
+<ul>
+	<li><a href=https://www.iconfinder.com>www.iconfinder.com</a></li>
+
+</ul>
+
+</div> <!-- END OF CONTENT -->
+<div class=spacer></div>
+</div> <!-- END OF WRAPPER -->
+
+
+<footer>
+	<a href=verstka.html><<&nbsp;Верстка</a>
+	<a href=infogra.html>Инфографика&nbsp;>></a>
+	Посетитель! Если ты открыл этот сайт с помощью ИЕ, и внешний вид сайта тебе не понравился, выкинь ИЕ! Он давно этого просит.
+</footer>
+
+</body>
+</html>

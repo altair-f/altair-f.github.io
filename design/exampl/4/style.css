@@ -1,0 +1,29 @@
+*{margin:0; padding:0}
+table{margin-left:450px; }
+iframe{display:none}
+html{background:linear-gradient(to left,#bbb,#fff,#ccc);}
+.large_letter{
+	position:relative;
+	margin: 0 auto; 
+	width:800px;
+	height:550px;
+	text-align:center;
+	
+	font:bold 200px Sans;
+	color:#333;
+	text-shadow: 
+		0px 150px 0px #999, 
+		0 300px 0 #bbb, 
+		0 450px 0 #ccc;
+		
+}
+
+.mirror_letter{	display:none;	}
+
+.baba{margin-top:-130px; width:250px}
+
+.plus{
+	fill:white;
+	margin:30px;
+	display:inline-block;
+}
